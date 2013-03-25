@@ -1,0 +1,116 @@
+// Fonts
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600)
+
+body
+  font-family: "Open Sans", sans-serif
+  line-height: 22px
+  color: $black1
+  font-size: $default-font-size
+  +text-shadow(#fff 0 1px 1px)
+
+a
+  color: $red1
+  text-decoration: none
+  &:hover
+    color: $red1 - #111
+
+strong, b
+  font-weight: bold
+
+em, i
+  font-style: italic
+
+s
+  +text-shadow(none)
+
+h1, h2
+  font-size: 32px
+  line-height: 48px
+  color: black
+  font-weight: 200
+
+h3
+  font-size: 20px
+  font-weight: 600
+  line-height: 48px
+
+p
+  font-size: 16px
+  line-height: 32px
+  &:first-letter
+    margin-left: 40px
+  &:last-child
+    margin-bottom: 0
+
+.text-align-right
+  text-align: right
+
+.text-align-left
+  text-align: left
+
+.button
+  background: $red1
+  padding: 8px 16px
+  color: #fff
+  +border-radius(5px)
+  &:hover
+    color: #fff
+    background: $red1 + #111
+
+blockquote
+  p
+    font-size: 32px
+    line-height: 40px
+    font-style: italic
+  cite
+    font-size: 16px
+    font-style: normal
+    color: $black1 + #444
+
+.center
+  text-align: center
+
+
+// Link layout
+
+.link
+  h2
+    font-size: 22px
+    color: $red1 + #666
+    line-height: 34px
+    a
+      border-bottom: 1px solid $gray1 - #202020
+      font-size: 24px
+      &:hover
+        border-bottom: 1px solid $red1
+
+// Quote layout
+
+.quote
+  blockquote
+    p
+      font-size: 24px
+      line-height: 40px
+    cite
+      font-size: 15px
+      font-weight: bold
+
+// Category layout
+
+.full-width
+  .category-title
+    .wrapper
+      padding-bottom: 20px
+
+.category-posts
+  padding-bottom: 90px
+
+.full-width
+  .post-entry
+    .wrapper
+      border-top: none
+      padding: 0px 0 0px 0
+    header
+      h2
+        font-size: 24px
+        margin-bottom: 0

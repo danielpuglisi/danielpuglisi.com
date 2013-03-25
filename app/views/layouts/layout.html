@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  {% if page.title == "Daniel Puglisi - Designer. Developer. Co-Founder of Codegestalt." %}
+    <title>{{ page.title }}</title>
+  {% else %}
+    <title>{{ page.title }} | Daniel Puglisi</title>
+  {% endif %}
+  <meta name="author" content="Daniel Puglisi" />
+  <meta name="description" content="Daniel Puglisi is a Swiss Designer and Web Developer. He is the Co-Founder of Codegestalt, Kreatify and a Photography enthusiast." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  {% if page.title != "Daniel Puglisi" %}<meta property="og:description" content="{{ page.content | truncatewords:80 | escape | strip_html }}" />{% endif %}
+  <link rel="stylesheet" href="/stylesheets/application.css" type="text/css" media="screen, projection" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="/javascript/application.js"></script>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32260198-1']);
+    _gaq.push(['_setDomainName', 'danielpuglisi.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+  </script>
+</head>
+<body>
+  <section class="full-width">
+
+    {{ content }}
+
+    <div class="footer">
+      <div class="wrapper">
+        <fieldset>
+          <legend>&hearts;</legend>
+        </fieldset>
+        <div class="center">
+          Handcrafted with a lot of love and passion by Daniel Puglisi
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

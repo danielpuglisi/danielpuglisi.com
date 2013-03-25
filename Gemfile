@@ -8,8 +8,12 @@ gem 'sqlite3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
+  # gem 'sass-rails',   '~> 4.0.0.beta1'
+  gem 'sass-rails',   github: 'rails/sass-rails'
   gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sprockets-rails', github: 'rails/sprockets-rails'
+  # gem 'compass-rails', git: "git://github.com/Compass/compass-rails.git", branch: "rails4"
+  gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby

@@ -1,0 +1,165 @@
+body
+  background: white
+
+.header
+  color: $black1 + #444
+  line-height: 140px
+  .logo
+    font-size: 32px
+    a
+      border-bottom: none
+      color: $black1
+      &:hover
+        // color: $black1 + #333
+        color: $red1
+    .domain
+      font-weight: 200
+    .directory
+      font-weight: 600
+    .red
+      color: $red1
+  .navigation
+    li
+      float: left
+    a
+      margin-left: 80px
+      font-size: 16px
+      border-bottom: none
+  a
+    color: $black1 + #666
+    border-bottom: 1px dashed $black1 + #666
+    &:hover
+      color: $black1 + #111
+
+.footer
+  padding-bottom: 48px
+  font-size: 12px
+  color: $black1 + #444
+  fieldset
+    font-size: 16px
+    width: 100%
+    border-top: 1px solid $gray1 - #111
+    margin-bottom: 48px
+    color: $red1
+    legend
+      text-align: center
+      padding: 0 80px
+
+.full-width
+  width: 100%
+  margin: 0 auto
+  .wrapper
+    .inner
+      padding: 0 20px
+
+.full-width-box
+  .wrapper
+    padding: 80px 0
+  .border-top
+    border-top: 1px solid $gray1 - #111
+  p
+    font-size: 24px
+    line-height: 40px
+    font-weight: 200
+    &:first-letter
+      margin: 0
+  .categories
+    width: 400px
+    margin: 0 auto
+
+.full-width-image
+  background: center center no-repeat
+  color: #fff
+  font-weight: 900
+  padding: 80px 0
+  margin-bottom: 80px
+  +text-shadow(none)
+  p
+    +text-shadow(#000 0 0 50px)
+    font-size: 32px
+    line-height: 48px
+    &:first-letter
+      margin: 0
+  .button
+    font-size: 20px
+    font-weight: 400
+
+// Home specific
+
+.full-width-home
+  padding: 120px 0
+  background: url("http://farm8.staticflickr.com/7267/8157218730_643b240f68_h.jpg") center center no-repeat
+  background-position: center -240px
+  p
+    margin-bottom: 24px
+
+.full-width-work
+  padding: 120px 0
+  background: url("http://farm9.staticflickr.com/8467/8150313007_3739642a7e_h.jpg") center center no-repeat
+  background-position: center -240px
+
+.home-quote
+  margin-top: 80px
+
+.pagination
+  border-top: 1px solid $gray1 - #111
+  font-size: 12px
+  padding: 48px 0
+  text-align: center
+  .page, .previous, .next
+    a, span
+      padding: 4px 12px
+  .current-page, a:hover
+    background: $red1
+    color: #fff
+    +text-shadow($black1 0 1px 1px)
+    +border-radius(3px)
+
+@media (max-width: 1070px)
+
+  .full-width
+    .wrapper
+      width: 100%
+      .inner
+        padding: 0 40px
+
+    .full-width-home
+      padding: 200px 0 40px 0
+      background-position: -260px -240px
+
+    .pagination
+      padding: 35px 0
+      width: 100%
+
+@media (max-width: 720px)
+
+  .header
+    .navigation
+      a
+        margin-left: 25px
+
+  .full-width-box
+    .categories
+      width: 100%
+
+  .pagination
+    padding: 30px 0
+    .extended
+      display: none
+    font-size: 13px
+
+  .full-width
+    .full-width-image
+      p
+        font-size: 16px
+        line-height: 24px
+      .button
+        font-size: 16px
+    .full-width-home
+      padding: 240px 0 40px 0
+      background-position: -300px -240px
+
+  .column
+    width: 100%
+    blockquote
+      margin-bottom: 20px

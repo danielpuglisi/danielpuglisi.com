@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DanielpuglisiCom</title>
+  <title><% if @title %><%= @title %> |<% end %>Daniel Puglisi</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="author" content="Daniel Puglisi" />
+  <meta name="description" content="Daniel Puglisi is a Swiss Designer and Web Developer. He is the Co-Founder of Codegestalt, Kreatify and a Photography enthusiast." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <%= render "layouts/google_analytics" %>
 </head>
 <body>
+  <section class="full-width">
+    <%= render "layouts/header" %>
 
-<%= yield %>
+    <%= yield %>
 
+    <%= render "layouts/footer" %>
+  </section>
 </body>
 </html>

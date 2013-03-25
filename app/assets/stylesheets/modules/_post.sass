@@ -1,0 +1,124 @@
+article
+  .wrapper
+    padding: 70px 0 90px 0
+    border-top: 1px solid $gray1 - #111
+    .inner
+      width: 740px
+      margin: 0 auto
+  header
+    margin-bottom: 30px
+    text-align: center
+    .meta
+      margin-top: 12px
+      font-size: 12px
+      color: $black1 + #555
+  h3
+    margin-top: 24px
+  ul, ol, blockquote, .highlight, iframe
+    margin: 40px 0
+  blockquote, ul, ol
+    padding-left: 40px
+  blockquote
+    font-size: 16px
+    line-height: 32px
+    border-left: 3px solid $gray1 - #111
+    color: $black1 + #555
+    font-style: italic
+    p
+      font-size: 16px
+      line-height: 32px
+      &:first-letter
+        margin-left: 0
+  ul
+    list-style: disc
+    li
+      margin-bottom: 10px
+      line-height: 27px
+  ol
+    list-style: decimal
+  p code, li code
+    background: $gray1
+    padding: 2px 3px
+    border: 1px solid $gray1 - #111
+    font-family: "Courier New", Times
+    font-size: 14px
+  p>img
+    text-align: center
+    margin: 40px 0
+  img
+    max-width: 100%
+    border: 1px solid $black1 + #999
+    +box-shadow($black1 + #999 0 1px 2px)
+  .source, .image-description
+    display: block
+    text-align: left
+    line-height: 20px
+    margin-top: 5px
+    font-size: 12px
+    a
+      color: $black1 + #888
+      &:hover
+        border-bottom: $black1 + #999 dashed 1px
+  .image-description
+    color: $black1 + #555
+
+  // Quora
+  [data-width="575"]
+    width: 700px
+  .quora-content-embed
+    margin: 0 auto
+  .spotify
+    width: 600px
+    height: 680px
+    display: block
+    margin: 40px auto
+  .youtube, .vimeo, .flickr-slideshow
+    width: 740px
+    height: 405px
+    margin: 40px auto
+
+  // Custom helpers for articles
+
+  .center
+    text-align: center
+    display: block
+
+  .big
+    font-size: 32px
+    line-height: 40px
+    font-weight: 200
+    margin: 40px 0
+
+  footer /* for the English note */
+    font-size: 13px
+    font-style: italic
+    #disqus_thread
+      margin-top: 30px
+
+@media (max-width: 1070px)
+
+  article
+    padding: 0
+    .wrapper
+      .inner
+        padding-top: 30px
+        width: auto
+        img
+          width: 100%
+      .spotify
+        width: 420px
+        height: 500px
+      .youtube, .vimeo, .flickr-slideshow
+        width: 100%
+        height: 340px
+
+@media (max-width: 720px)
+
+  article
+    padding: 0
+    .wrapper
+      .inner
+        padding: 0
+      .spotify
+        width: 260px
+        height: 340px
