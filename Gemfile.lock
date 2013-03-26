@@ -7,6 +7,13 @@ GIT
       compass (>= 0.12.2, < 0.14)
 
 GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: 439d0a932231b7dad2ddf6e9b74ce367061445c7
+  branch: rails4
+  specs:
+    friendly_id (4.1.0.beta.2)
+
+GIT
   remote: git://github.com/rails/sass-rails.git
   revision: d435679b0fe528b954a9abd0059f975d94707574
   specs:
@@ -114,7 +121,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
-    thor (0.17.0)
+    thor (0.18.0)
     thread_safe (0.1.0)
       atomic
     tilt (1.3.6)
@@ -134,6 +141,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0.beta1)
   compass-rails!
+  friendly_id!
   jbuilder (~> 1.0.1)
   jquery-rails
   rails (= 4.0.0.beta1)

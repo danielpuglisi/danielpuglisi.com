@@ -1,8 +1,6 @@
 class Post < ActiveRecord::Base
-  has_many :tags
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
-  attr_accessible :title, :content,
-    :published_at, :published,
-    :external_link, :type,
-    :slug
+  has_many :tags
 end

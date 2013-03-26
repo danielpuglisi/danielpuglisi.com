@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130326075402) do
+ActiveRecord::Schema.define(version: 20130326081256) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -20,10 +20,13 @@ ActiveRecord::Schema.define(version: 20130326075402) do
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "external_link"
-    t.string   "type"
+    t.string   "style"
     t.date     "published_at"
     t.boolean  "published"
+    t.string   "permalink"
   end
+
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
 
   create_table "tags", force: true do |t|
     t.string   "title"
