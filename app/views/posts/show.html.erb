@@ -5,7 +5,9 @@
         <h2><%= @post.title %></h2>
         <div class="meta">
           <%= @post.published_at %>
-          <%= @post.tags.map { |t| t.title }.join(", ") %>
+          <% if @post.tags.any? %>
+            - <%= raw @post.tags.map { |t| link_to t.title, t }.join(", ") %>
+          <% end %>
         </div>
       </header>
       <%= markdown(@post.content) %>

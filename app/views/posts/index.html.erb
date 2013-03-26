@@ -1,16 +1,4 @@
-<%# <div class="full-width-box"> %>
-<%#   <div class="wrapper border-top"> %>
-<%#     <div class="inner center"> %>
-<%#       <p class="categories"> %>
-<%#         I write about my %>
-<%#         <a href="/blog/startup">startup life</a>, %>
-<%#         <a href="/blog/productivity">productivity</a>, %>
-<%#         <a href="/blog/programming">programming</a>, %>
-<%#         <a href="/blog/music">music</a> and a lot of other things. %>
-<%#       </p> %>
-<%#     </div> %>
-<%#   </div> %>
-<%# </div> %>
+<%= render "shared/tags" %>
 
 <% @posts.each do |post| %>
   <article class="post">
@@ -21,7 +9,7 @@
         <div class="meta">
           <%= post.published_at %>
           <% if post.tags.any? %>
-            | <%= post.tags.map { |t| t.title }.join(", ") %>
+            - <%= raw post.tags.map { |t| link_to t.title, t }.join(", ") %>
           <% end %>
         </div>
       </header>
