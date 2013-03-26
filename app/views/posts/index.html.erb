@@ -20,7 +20,7 @@
         <h2><%= link_to post.title, post %></h2>
         <div class="meta"><%= post.published_at %></div>
       </header>
-      <%= post.content %>
+      <%= markdown(post.content) %>
     </div>
   </div>
   </article>
