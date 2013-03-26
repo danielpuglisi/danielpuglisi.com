@@ -43,8 +43,9 @@ def migrate(file)
   post = Post.create(title: title, content: content,
                      published_at: date, published: published,
                      external_link: link, style: type,
-                     slug: slug, permalink: permalink)
-  p post
+                     permalink: permalink)
+  post.slug = slug if slug
+  post.save
   post.tags.create(title: category)
 end
 

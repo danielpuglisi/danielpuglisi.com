@@ -17,7 +17,7 @@
   <div class="wrapper">
     <div class="inner">
       <header>
-        <h2><%= link_to post.title, post %></h2>
+        <h2><%= link_to post.title, permalink(post) %></h2>
         <div class="meta"><%= post.published_at %></div>
       </header>
       <%= markdown(post.content) %>

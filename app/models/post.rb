@@ -7,6 +7,7 @@ class Post < ActiveRecord::Base
   # Scopes
   scope :published, where(published: true).order("published_at DESC")
 
-  # Pagination
-  paginates_per 10
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end
