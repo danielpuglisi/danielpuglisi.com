@@ -18,7 +18,12 @@
     <div class="inner">
       <header>
         <h2><%= link_to post.title, permalink(post) %></h2>
-        <div class="meta"><%= post.published_at %></div>
+        <div class="meta">
+          <%= post.published_at %>
+          <% if post.tags.any? %>
+            | <%= post.tags.map { |t| t.title }.join(", ") %>
+          <% end %>
+        </div>
       </header>
       <%= markdown(post.content) %>
     </div>

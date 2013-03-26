@@ -16,5 +16,6 @@ DanielpuglisiCom::Application.routes.draw do
   get "/articles" => "posts#index"
   get "/articles/:year/:month(/:day)/:id" => "posts#show", as: :post,
     year:   /(19|20)\d{2}/,
-    month:  /[01]?\d/
+    month:  /[01]?\d/,
+    day:    /[0-3]?\d/
 end

@@ -46,7 +46,7 @@ def migrate(file)
                      permalink: permalink)
   post.slug = slug if slug
   post.save
-  post.tags.create(title: category)
+  post.tags.create(title: category) if category
 end
 
 namespace :migrate do
