@@ -1,0 +1,27 @@
+<%# <div class="full-width-box"> %>
+<%#   <div class="wrapper border-top"> %>
+<%#     <div class="inner center"> %>
+<%#       <p class="categories"> %>
+<%#         I write about my %>
+<%#         <a href="/blog/startup">startup life</a>, %>
+<%#         <a href="/blog/productivity">productivity</a>, %>
+<%#         <a href="/blog/programming">programming</a>, %>
+<%#         <a href="/blog/music">music</a> and a lot of other things. %>
+<%#       </p> %>
+<%#     </div> %>
+<%#   </div> %>
+<%# </div> %>
+
+<% @posts.each do |post| %>
+  <article class="post">
+  <div class="wrapper">
+    <div class="inner">
+      <header>
+        <h2><%= link_to post.title, post %></h2>
+        <div class="meta"><%= post.published_at %></div>
+      </header>
+      <%= post.content %>
+    </div>
+  </div>
+  </article>
+<% end %>
