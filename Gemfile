@@ -28,6 +28,7 @@ gem 'redcarpet'
 gem 'kaminari'
 gem 'pg'
 gem 'font-awesome-sass-rails'
+gem 'sanitize'
 
 gem 'turbolinks'
 gem 'jquery-turbolinks'
