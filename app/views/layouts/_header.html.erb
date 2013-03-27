@@ -3,15 +3,15 @@
     <div class="inner">
       <div class="logo left">
         <%= link_to root_path, class: "domain" do %>
-          <span class="red">&hearts;</span>
+          <span class="red"><i class="icon-heart"></i></span>
         <% end %>
       </div>
 
       <div class="navigation right">
         <ul>
-          <li><%= link_to "Work", work_path %></li>
-          <li><%= link_to "Articles", articles_path %></li>
-          <li><%= mail_to "daniel@codegestalt.com", "Mail", encode: "javascript" %></li>
+          <li class="first"><%= link_to "Work", work_path %></li>
+          <li class="last"><%= link_to "Articles", articles_path %></li>
+          <li class="red"><%= mail_to "daniel@codegestalt.com", raw("<i class='icon-envelope-alt'></i>"), encode: "javascript" %></li>
         </ul>
       </div>
       <div class="clear"></div>

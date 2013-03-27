@@ -27,6 +27,7 @@ gem 'friendly_id', github: "norman/friendly_id", branch: "rails4"
 gem 'redcarpet'
 gem 'kaminari'
 gem 'pg'
+gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
 gem 'jquery-turbolinks'
