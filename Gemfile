@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'friendly_id', github: "norman/friendly_id", branch: "rails4"
 gem 'redcarpet'
 gem 'kaminari'
+gem 'pg'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
