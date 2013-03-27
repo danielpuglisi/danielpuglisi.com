@@ -1,0 +1,51 @@
+.header
+  color: $black1 + #444
+  display: block
+  line-height: 120px
+  height: 120px
+  z-index: 9999
+  position: relative
+  +text-shadow(none)
+  .logo
+    font-size: 32px
+    a
+      border-bottom: none
+      color: $black1
+      &:hover
+        // color: $black1 + #333
+        color: $red1
+    .red
+      color: $red1
+  .navigation
+    font-family: "proxima-nova",sans-serif
+    li
+      float: left
+      &:first-child a
+        +border-left-radius(3px)
+      &:nth-child(2) a
+        +border-right-radius(3px)
+        border-right: 0
+        margin-right: 10px
+      &:last-child a
+        +border-radius(3px)
+        background: $red1
+        border-right: 0
+        color: #fff
+        padding: 13px 13px 12px 13px
+    a
+      font-size: 12px
+      border-bottom: none
+      background: #fff
+      +background(rgba(#fff, 0.9))
+      color: $black1 + #333
+      padding: 13px 22px 12px 22px
+      margin-top: -5px
+      text-transform: uppercase
+      font-weight: 600
+      border-right: 1px solid #ddd
+  a
+    color: $black1 + #666
+    border-bottom: 1px dashed $black1 + #666
+    &:hover
+      color: $black1 + #111
+

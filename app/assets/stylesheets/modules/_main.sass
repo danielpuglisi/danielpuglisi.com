@@ -1,36 +1,6 @@
 body
   background: white
 
-.header
-  color: $black1 + #444
-  line-height: 140px
-  .logo
-    font-size: 32px
-    a
-      border-bottom: none
-      color: $black1
-      &:hover
-        // color: $black1 + #333
-        color: $red1
-    .domain
-      font-weight: 200
-    .directory
-      font-weight: 600
-    .red
-      color: $red1
-  .navigation
-    li
-      float: left
-    a
-      margin-left: 80px
-      font-size: 16px
-      border-bottom: none
-  a
-    color: $black1 + #666
-    border-bottom: 1px dashed $black1 + #666
-    &:hover
-      color: $black1 + #111
-
 .footer
   padding-bottom: 48px
   font-size: 12px
@@ -68,30 +38,39 @@ body
     margin: 0 auto
 
 .full-width-image
-  background: center center no-repeat
+  font-family: "proxima-nova", sans-serif
+  text-transform: uppercase
+  position: relative
   color: #fff
   font-weight: 900
   padding: 80px 0
   margin-bottom: 80px
   +text-shadow(none)
-  p
-    +text-shadow(#000 0 0 50px)
-    font-size: 32px
-    line-height: 48px
-    &:first-letter
-      margin: 0
-  .button
-    font-size: 20px
-    font-weight: 400
+  .slogan
+    p
+      font-size: 28px
+      line-height: 32px
+      margin-bottom: 12px
+      +text-shadow(#000 0 0 50px)
+      &:first-letter
+        margin: 0
 
 // Home specific
 
 .full-width-home
-  padding: 120px 0
-  background: url("http://farm8.staticflickr.com/7267/8157218730_643b240f68_h.jpg") center center no-repeat
-  background-position: center -240px
-  p
-    margin-bottom: 24px
+  // background: url("http://farm8.staticflickr.com/7267/8157218730_643b240f68_h.jpg") center center no-repeat
+  background: url("home.jpg") no-repeat
+  margin-top: -120px
+  height: 600px
+  background-position: center center
+  background-size: cover
+  .slogan
+    padding: 470px 0 0 0
+    font-size: 24px
+    right: 0
+    .hire-me
+      font-family: "ff-market-web", cursive
+      font-size: 28px
 
 .full-width-work
   padding: 120px 0
@@ -123,8 +102,12 @@ body
         padding: 0 40px
 
     .full-width-home
+      height: 400px
       padding: 200px 0 40px 0
-      background-position: -260px -240px
+      background-position: center center
+      background-size: cover
+      .slogan
+        padding: 280px 0 0 0
 
     .pagination
       padding: 35px 0
@@ -132,10 +115,12 @@ body
 
 @media (max-width: 720px)
 
-  .header
-    .navigation
-      a
-        margin-left: 25px
+  .header .wrapper .navigation li
+    &:nth-child(2) a
+      margin-right: 5px
+    &:last-child a, a
+      padding: 8px 12px 7px 12px
+      font-size: 10px
 
   .full-width-box
     .categories
@@ -155,8 +140,11 @@ body
       .button
         font-size: 16px
     .full-width-home
-      padding: 240px 0 40px 0
-      background-position: -300px -240px
+      height: 160px
+      background-position: center center
+      background-size: cover
+      .slogan
+        padding: 60px 0 0 0
 
   .column
     width: 100%
