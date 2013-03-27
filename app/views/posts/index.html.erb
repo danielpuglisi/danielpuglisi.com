@@ -1,22 +1,7 @@
 <%= render "shared/tags" %>
 
 <% @posts.each do |post| %>
-  <article class="post">
-  <div class="wrapper">
-    <div class="inner">
-      <header>
-        <h2><%= link_to post.title, permalink(post) %></h2>
-        <div class="meta">
-          <%= post.published_at %>
-          <% if post.tags.any? %>
-            - <%= raw post.tags.map { |t| link_to t.title, t }.join(", ") %>
-          <% end %>
-        </div>
-      </header>
-      <%= markdown(post.content) %>
-    </div>
-  </div>
-  </article>
+  <%= render_layout post %>
 <% end %>
 
 <div class="full-width">

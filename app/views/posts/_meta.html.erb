@@ -1,0 +1,7 @@
+<div class="meta">
+  <%= post.published_at.strftime("%B %d, %Y") %>
+  <% if post.tags.any? %>
+    - <%= raw post.tags.map { |t| link_to t.title, t }.join(", ") %>
+  <% end %>
+  - <%= link_to "permalink", permalink(post) %>
+</div>

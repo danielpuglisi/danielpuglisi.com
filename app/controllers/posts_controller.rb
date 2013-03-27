@@ -4,6 +4,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_slug(params[:id])
+    @current_post = Post.find_by_slug(params[:id])
   end
 end

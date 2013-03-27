@@ -1,0 +1,24 @@
+<article class="quote">
+  <div class="wrapper">
+    <div class="inner">
+      <header>
+        <% if @current_post == post %>
+          <h2><%= post.title %></h2>
+        <% else %>
+          <h2><%= link_to post.title, permalink(post) %></h2>
+        <% end %>
+        <div class="meta">
+          <%= post.published_at %>
+          <% if post.tags.any? %>
+            - <%= raw post.tags.map { |t| link_to t.title, t }.join(", ") %>
+          <% end %>
+        </div>
+      </header>
+      <blockquote>
+        <p>{{ post.quote }}</p>
+        <p>- <cite>{{ post.author }}</cite></p>
+      </blockquote>
+      <%= markdown(post.content) %>
+    </div>
+  </div>
+</article>

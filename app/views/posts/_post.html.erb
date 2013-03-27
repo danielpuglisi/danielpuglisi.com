@@ -1,0 +1,15 @@
+<article class="post">
+  <div class="wrapper">
+    <div class="inner">
+      <header>
+        <% if @current_post == post %>
+          <h2><%= raw post.title %></h2>
+        <% else %>
+          <h2><%= link_to raw(post.title), permalink(post) %></h2>
+        <% end %>
+        <%= render "posts/meta", post: post %>
+      </header>
+      <%= markdown(post.content) %>
+    </div>
+  </div>
+</article>

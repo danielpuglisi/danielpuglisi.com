@@ -13,13 +13,8 @@
     <div class="wrapper">
       <div class="inner">
         <header>
-          <h2><%= link_to post.title, permalink(post) %></h2>
-          <div class="meta">
-            <%= post.published_at %>
-            <% if post.tags.any? %>
-              - <%= raw post.tags.map { |t| link_to t.title, t }.join(", ") %>
-            <% end %>
-          </div>
+          <h2><%= link_to raw(post.title), permalink(post) %></h2>
+          <%= render "posts/meta", post: post %>
         </header>
       </div>
     </div>
