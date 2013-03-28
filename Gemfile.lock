@@ -142,6 +142,7 @@ GEM
       nokogiri (>= 1.4.4, < 1.6)
       nokogiri (>= 1.4.4, < 1.6)
     sass (3.2.7)
+    simple_form (1.4.1)
     sprockets (2.9.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -182,6 +183,7 @@ DEPENDENCIES
   redcarpet
   sanitize
   sass-rails!
+  simple_form
   sprockets-rails!
   sqlite3
   turbolinks

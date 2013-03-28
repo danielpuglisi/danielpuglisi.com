@@ -1,15 +1,32 @@
-<%= form_for(@admin_post) do |f| %>
-  <% if @admin_post.errors.any? %>
+<%= simple_form_for [:admin, @post] do |f| %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@admin_post.errors.count, "error") %> prohibited this admin_post from being saved:</h2>
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-      <% @admin_post.errors.full_messages.each do |msg| %>
+      <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
+
+  <h2>Details</h2>
+  <%= f.input :title %>
+  <%= f.input :content %>
+
+  <h2>Date</h2>
+  <%= f.input :published %>
+  <%= f.input :published_at %>
+
+  <h2>Tags</h2>
+  <%= f.association :tags, as: :check_boxes %>
+
+  <h2>Type</h2>
+  <%= f.input :style, label: "Type", as: :select, collection: ["post", "link"] %>
+
+  <h2>Link</h2>
+  <%= f.input :external_link, placeholder: "http://" %>
 
   <div class="actions">
     <%= f.submit %>

@@ -30,6 +30,7 @@ gem 'pg'
 gem 'font-awesome-sass-rails'
 gem 'sanitize'
 gem 'devise', github: "plataformatec/devise", branch: "rails4"
+gem 'simple_form'
 
 gem 'turbolinks'
 gem 'jquery-turbolinks'
