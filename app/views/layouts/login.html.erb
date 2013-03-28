@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login | Lovely Backend</title>
+  <%= stylesheet_link_tag    "login", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
+  <script type="text/javascript" src="//use.typekit.net/qwq0kmn.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="inner">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

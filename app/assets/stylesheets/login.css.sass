@@ -1,0 +1,61 @@
+@import compass
+@import font-awesome
+@import admin/base/*
+@import admin/generic/text
+
+body
+  background: $red
+
+.wrapper
+  width: 320px
+  margin: 0 auto
+  margin-top: 200px
+
+.inner
+  padding: 0 20px
+
+.box
+  background: #f9f9f9
+  border: 1px solid #fff
+  padding: 20px 20px 15px 20px
+  text-align: center
+  +box-shadow($red - #222 0 1px 2px)
+
+h2
+  margin-bottom: 20px
+
+.outside
+  text-align: center
+  color: #fff
+  +text-shadow($red - #222 0 -1px 1px)
+
+a.outside
+  display: block
+  margin-top: 20px
+  font-size: 12px
+
+input
+  width: 222px
+  padding: 7px
+  margin-bottom: 20px
+  font-size: 14px
+
+input[type=submit]
+  margin-bottom: 0
+  border: none
+  background: $blue
+  color: #fff
+  padding: 15px
+  font-weight: 600
+  +text-shadow($blue - #222 0 -1px 1px)
+  &:hover
+    background: $blue + #111
+
+label
+  font-weight: 600
+  padding-bottom: 5px
+  display: inline-block
+
+input.boolean
+  width: auto
+  margin-right: 5px
