@@ -20,7 +20,7 @@ class Admin::PostsController < AdminController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to admin_posts_path, notice: 'Post was successfully created.'
     else
       render action: 'new'
     end
@@ -28,7 +28,7 @@ class Admin::PostsController < AdminController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to admin_posts_path, notice: 'Post was successfully updated.'
     else
       render action: 'edit'
     end
@@ -36,7 +36,7 @@ class Admin::PostsController < AdminController
 
   def destroy
     @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    redirect_to admin_posts_path, notice: 'Post was successfully destroyed.'
   end
 
   private
@@ -47,6 +47,6 @@ class Admin::PostsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params[:post]
+      params[:post].permit(:title, :content, :published, :published_at, :style, :external_link, :tags)
     end
 end
