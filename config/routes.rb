@@ -4,7 +4,7 @@ DanielpuglisiCom::Application.routes.draw do
 
   # Backend
   namespace "admin" do
-    resources :posts, path: "articles"
+    resources :posts, path: "articles", except: [:show]
   end
 
   # Home
