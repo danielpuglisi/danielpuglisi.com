@@ -1,5 +1,6 @@
 DanielpuglisiCom::Application.routes.draw do
 
+  devise_for :users
   # Backend
   scope "/admin" do
     resources :posts, path: "articles"

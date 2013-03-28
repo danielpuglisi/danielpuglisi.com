@@ -29,6 +29,7 @@ gem 'kaminari'
 gem 'pg'
 gem 'font-awesome-sass-rails'
 gem 'sanitize'
+gem 'devise', github: "plataformatec/devise", branch: "rails4"
 
 gem 'turbolinks'
 gem 'jquery-turbolinks'
