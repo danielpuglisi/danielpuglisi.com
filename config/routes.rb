@@ -13,6 +13,9 @@ DanielpuglisiCom::Application.routes.draw do
     month:  /[01]?\d/,
     day:    /[0-3]?\d/
 
+  # Archive
+  get "/archive", to: "posts#archive"
+
   # Tags
   get "/tags/:id", to: "tags#show", as: :tag
 end

@@ -1,13 +1,13 @@
-<div class="full-width-box">
+<div class="full-width-box articles-navigation">
   <div class="wrapper border-top">
     <div class="inner center">
-      <p class="categories">
-        I write about my
-        <a href="/tags/startup">startup life</a>,
-        <a href="/tags/productivity">productivity</a>,
-        <a href="/tags/programming">programming</a>,
-        <a href="/tags/music">music</a> and a lot of other things.
-      </p>
+      <div class="tags">
+        Tags: <%= raw Tag.all.map { |tag| link_to tag.title, tag }.join(", ") %>
+      </div>
+      <div class="archive">
+        <%= link_to "Archive", archive_path %>
+      </div>
+      <div class="clear"></div>
     </div>
   </div>
 </div>

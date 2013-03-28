@@ -11,4 +11,10 @@ class PostsController < ApplicationController
     @title = @current_post.title
     @description = @current_post.content
   end
+
+  def archive
+    @title = "Archive"
+    @posts = Post.published
+    @posts_months = @posts.group_by { |t| t.published_at.beginning_of_month }
+  end
 end

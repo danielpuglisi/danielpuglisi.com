@@ -1,0 +1,22 @@
+<%= render "shared/tags" %>
+
+<% @posts_months.each do |month, posts| %>
+  <div class="entry entry-archive-month">
+    <div class="wrapper">
+      <div class="inner">
+        <header>
+        <h2><%= month.strftime("%B, %Y") %></h2>
+        </header>
+        <% posts.each do |post| %>
+          <%= link_to permalink(post), class: "entry-archive" do %>
+            <%= post.title %>
+            <div class="meta">
+              <%= post.published_at.strftime("%B %d, %Y") %>
+            </div>
+          <% end %>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+<% end %>
