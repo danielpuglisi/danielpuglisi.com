@@ -1,5 +1,10 @@
 DanielpuglisiCom::Application.routes.draw do
 
+  # Backend
+  scope "/admin" do
+    resources :posts, path: "articles"
+  end
+
   # Home
   root :to => "pages#home"
 
