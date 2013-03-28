@@ -4,11 +4,11 @@ DanielpuglisiCom::Application.routes.draw do
   root :to => "pages#home"
 
   # Work
-  get "/work" => "pages#work"
+  get "/work", to: "pages#work"
 
   # Posts
-  get "/articles" => "posts#index"
-  get "/articles/:year/:month(/:day)/:id" => "posts#show", as: :post,
+  get "/articles", to: "posts#index"
+  get "/articles/:year/:month(/:day)/:id", to: "posts#show", as: :post,
     year:   /(19|20)\d{2}/,
     month:  /[01]?\d/,
     day:    /[0-3]?\d/
