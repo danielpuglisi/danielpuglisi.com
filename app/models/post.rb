@@ -5,7 +5,8 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
 
   # Scopes
-  scope :published, where(published: true).order("published_at DESC")
+  default_scope order("published_at DESC").order("published")
+  scope :published, where(published: true)
 
   def should_generate_new_friendly_id?
     new_record?

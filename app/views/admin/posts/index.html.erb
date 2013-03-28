@@ -1,8 +1,13 @@
 <h1>Listing posts</h1>
 
+<%= link_to raw("<i class='icon-plus'></i> New Post"), new_admin_post_path, class: "action" %>
+
 <table>
   <thead>
     <tr>
+      <th>Title</th>
+      <th>Published</th>
+      <th>Published At</th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,14 +17,15 @@
   <tbody>
     <% @posts.each do |post| %>
     <tr>
-      <td><%= link_to 'Show', admin_post_path(post) %></td>
-      <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-      <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= post.title %></td>
+      <td><%= post.published %></td>
+      <td><%= post.published_at %></td>
+      <td>
+        <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post) if post.published %>
+      </td>
+      <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_post_path(post) %></td>
+      <td><%= link_to raw("<i class='icon-trash'></i>"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Post', new_admin_post_path %>

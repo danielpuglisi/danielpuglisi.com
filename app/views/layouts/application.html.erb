@@ -11,17 +11,17 @@
   <meta name="author" content="Daniel Puglisi" />
   <meta name="description" content="<%= description %>" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-  <%= render "layouts/google_analytics" %>
+  <%= render "layouts/application/google_analytics" %>
 </head>
 <body>
   <section class="full-width">
-    <%= render "layouts/header" %>
+    <%= render "layouts/application/header" %>
 
     <div class="main">
       <%= yield %>
     </div>
 
-    <%= render "layouts/footer" %>
+    <%= render "layouts/application/footer" %>
   </section>
 </body>
 </html>

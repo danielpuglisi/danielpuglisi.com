@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Daniel Puglisi Backend</title>
+  <title>Lovely Backend</title>
   <%= stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "admin", "data-turbolinks-track" => true %>
   <script type="text/javascript" src="//use.typekit.net/qwq0kmn.js"></script>
@@ -14,13 +14,17 @@
 </head>
 <body>
   <section class="full-width">
-    <%# <%= render "layouts/header" %1> %>
+    <%= render "layouts/admin/header" %>
 
     <div class="main">
-      <%= yield %>
+      <div class="wrapper">
+        <div class="inner">
+          <%= yield %>
+        </div>
+      </div>
     </div>
 
-    <%# <%= render "layouts/footer" %1> %>
+    <%# <%= render "layouts/admin/footer" %1> %>
   </section>
 </body>
 </html>
