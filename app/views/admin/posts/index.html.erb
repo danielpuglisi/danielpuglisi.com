@@ -2,30 +2,41 @@
 
 <%= link_to raw("<i class='icon-plus'></i> New Post"), new_admin_post_path, class: "action" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Published</th>
-      <th>Published At</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="box">
+  <table>
+    <thead>
+      <tr>
+        <th class="center"><i class='icon-eye-open'></i></th>
+        <th>Title</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.published %></td>
-      <td><%= post.published_at %></td>
-      <td>
-        <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post) if post.published %>
-      </td>
-      <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_post_path(post) %></td>
-      <td><%= link_to raw("<i class='icon-trash'></i>"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td class="center"><%= post.published? ? raw("<i class='icon-ok'></i>") : "" %></td>
+        <td>
+          <%= link_to edit_admin_post_path(post) do %>
+            <div class="details">
+              <div class="title"><%= post.title %></div>
+              <div class="slug"><%= post.slug %></div>
+            </div>
+            <div class="meta">
+              <div class="meta-date"><%= post.published_at.strftime("%d.%m.%Y") if post.published_at %></div>
+              <div class="meta-tags"><%= post.tags.map { |t| t.title }.join(", ") %></div>
+            </div>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post) if post.published %>
+        </td>
+        <td><%= link_to raw("<i class='icon-trash'></i>"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @posts %>
+</div>
