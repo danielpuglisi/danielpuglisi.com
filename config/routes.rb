@@ -12,6 +12,7 @@ DanielpuglisiCom::Application.routes.draw do
 
   # Work
   get "/work", to: "pages#work"
+  get "/recommendations", to: "pages#recommendations"
 
   # Posts
   get "/articles", to: "posts#index"

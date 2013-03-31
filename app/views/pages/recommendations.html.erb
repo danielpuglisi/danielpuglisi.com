@@ -1,0 +1,26 @@
+<article class="entry">
+  <div class="wrapper">
+    <div class="inner">
+      <header>
+        <h1>Recommendations</h1>
+        <div class="meta">Different things I like.</div>
+      </header>
+      <p>
+        Looking for a stunning movie <s>or a good book</s> to kill off some time?
+        Please take a look at my recommendations below. If you have some
+        recommendations for me, please drop me a quick <a href="mailto:daniel@codegestalt.com">message</a>.
+      </p>
+      <div class="recommendations clearfix">
+        <div class="list">
+          <header>
+            <h2>Movies & TV Series <span class="meta">Must watch. Sorted by Rating.</span></h2>
+          </header>
+          <ul>
+            <% @movies.each do |movie| %>
+              <li><%= link_to_movie movie %></li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
+  </div>
+</article>
