@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   end
 
   def recommendations
+    @title = "Recommendations"
     result = ImdbLists.fetch("http://www.imdb.com/list/aw8wqGRn0LI/")
     @movies = result.movies.sort_by{|x| x.rating}.reverse
   end
