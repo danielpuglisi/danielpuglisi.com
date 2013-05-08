@@ -1,81 +1,62 @@
 GIT
-  remote: git://github.com/milgner/compass-rails.git
-  revision: 1749c06f15dc4b058427e7969810457213647fb8
-  ref: 1749c06f15dc4b058427e7969810457213647fb8
-  specs:
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
-
-GIT
-  remote: git://github.com/norman/friendly_id.git
-  revision: 439d0a932231b7dad2ddf6e9b74ce367061445c7
+  remote: git://github.com/FriendlyId/friendly_id.git
+  revision: 903f2fac79774edb119a7f6baa2396ab7c555d47
   branch: rails4
   specs:
     friendly_id (4.1.0.beta.2)
 
 GIT
-  remote: git://github.com/plataformatec/devise.git
-  revision: d29b744d92a380e61d0c62149cc60e91ec4ba0f2
+  remote: git://github.com/milgner/compass-rails.git
+  revision: 1749c06f15dc4b058427e7969810457213647fb8
   branch: rails4
   specs:
-    devise (2.2.3)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
+
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
+  branch: rails4
+  specs:
+    devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (~> 4.0.0.beta)
+      railties (>= 3.2.6, < 5)
       warden (~> 1.2.1)
-
-GIT
-  remote: git://github.com/rails/sass-rails.git
-  revision: d435679b0fe528b954a9abd0059f975d94707574
-  specs:
-    sass-rails (4.0.0.beta1)
-      railties (>= 4.0.0.beta, < 5.0)
-      sass (>= 3.1.10)
-      sprockets-rails (~> 2.0.0.rc0)
-      tilt (~> 1.3)
-
-GIT
-  remote: git://github.com/rails/sprockets-rails.git
-  revision: afce1e65f7c6df4ae96522b26e755915d238ff80
-  specs:
-    sprockets-rails (2.0.0.rc3)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      sprockets (~> 2.8)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.0.0.beta1)
-      actionpack (= 4.0.0.beta1)
+    actionmailer (4.0.0.rc1)
+      actionpack (= 4.0.0.rc1)
       mail (~> 2.5.3)
-    actionpack (4.0.0.beta1)
-      activesupport (= 4.0.0.beta1)
+    actionpack (4.0.0.rc1)
+      activesupport (= 4.0.0.rc1)
       builder (~> 3.1.0)
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    activemodel (4.0.0.beta1)
-      activesupport (= 4.0.0.beta1)
+    activemodel (4.0.0.rc1)
+      activesupport (= 4.0.0.rc1)
       builder (~> 3.1.0)
-    activerecord (4.0.0.beta1)
-      activemodel (= 4.0.0.beta1)
-      activerecord-deprecated_finders (~> 0.0.3)
-      activesupport (= 4.0.0.beta1)
-      arel (~> 4.0.0.beta1)
-    activerecord-deprecated_finders (0.0.3)
-    activesupport (4.0.0.beta1)
-      i18n (~> 0.6.2)
+    activerecord (4.0.0.rc1)
+      activemodel (= 4.0.0.rc1)
+      activerecord-deprecated_finders (~> 1.0.2)
+      activesupport (= 4.0.0.rc1)
+      arel (~> 4.0.0)
+    activerecord-deprecated_finders (1.0.2)
+    activesupport (4.0.0.rc1)
+      i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
-      tzinfo (~> 0.3.33)
-    arel (4.0.0.beta2)
-    atomic (1.0.1)
+      tzinfo (~> 0.3.37)
+    arel (4.0.0)
+    atomic (1.1.9)
     bcrypt-ruby (3.0.1)
     builder (3.1.4)
-    chunky_png (1.2.7)
-    coffee-rails (4.0.0.beta1)
+    chunky_png (1.2.8)
+    coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
     coffee-script (2.2.0)
@@ -93,7 +74,7 @@ GEM
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
     fssm (0.2.10)
-    hike (1.2.1)
+    hike (1.2.2)
     i18n (0.6.4)
     imdb_lists (2.1.0)
       nokogiri
@@ -104,9 +85,9 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-turbolinks (0.2.1)
-      rails (>= 3.1.0)
-    json (1.7.7)
+    jquery-turbolinks (1.0.0)
+      railties (>= 3.1.0)
+      turbolinks
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -114,59 +95,64 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.21)
-    minitest (4.7.0)
-    multi_json (1.7.2)
+    mime-types (1.23)
+    minitest (4.7.4)
+    multi_json (1.7.3)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
-    pg (0.15.0)
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (4.0.0.beta1)
-      actionmailer (= 4.0.0.beta1)
-      actionpack (= 4.0.0.beta1)
-      activerecord (= 4.0.0.beta1)
-      activesupport (= 4.0.0.beta1)
+    rails (4.0.0.rc1)
+      actionmailer (= 4.0.0.rc1)
+      actionpack (= 4.0.0.rc1)
+      activerecord (= 4.0.0.rc1)
+      activesupport (= 4.0.0.rc1)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.0.beta1)
-      sprockets-rails (~> 2.0.0.rc3)
-    railties (4.0.0.beta1)
-      actionpack (= 4.0.0.beta1)
-      activesupport (= 4.0.0.beta1)
+      railties (= 4.0.0.rc1)
+      sprockets-rails (~> 2.0.0.rc4)
+    railties (4.0.0.rc1)
+      actionpack (= 4.0.0.rc1)
+      activesupport (= 4.0.0.rc1)
       rake (>= 0.8.7)
-      rdoc (~> 3.4)
-      thor (>= 0.17.0, < 2.0)
+      thor (>= 0.18.1, < 2.0)
     rake (10.0.4)
-    rdoc (3.12.2)
-      json (~> 1.4)
     redcarpet (2.2.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     sanitize (2.0.3)
       nokogiri (>= 1.4.4, < 1.6)
-      nokogiri (>= 1.4.4, < 1.6)
-    sass (3.2.7)
+    sass (3.2.8)
+    sass-rails (4.0.0.rc1)
+      railties (>= 4.0.0.beta, < 5.0)
+      sass (>= 3.1.10)
+      sprockets-rails (~> 2.0.0.rc0)
+      tilt (~> 1.3)
     simple_form (1.4.1)
-    sprockets (2.9.0)
+    sprockets (2.9.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sprockets-rails (2.0.0.rc4)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      sprockets (~> 2.8)
     sqlite3 (1.3.7)
-    thor (0.18.0)
+    thor (0.18.1)
     thread_safe (0.1.0)
       atomic
-    tilt (1.3.6)
+    tilt (1.4.1)
     titleize (1.3.0)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.1.0)
+    turbolinks (1.1.1)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (1.3.0)
+    uglifier (2.1.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
@@ -176,7 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-rails (~> 4.0.0.beta1)
+  coffee-rails (~> 4.0.0)
   compass-rails!
   devise!
   font-awesome-sass-rails
@@ -187,12 +173,11 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   pg
-  rails (= 4.0.0.beta1)
+  rails (= 4.0.0.rc1)
   redcarpet
   sanitize
-  sass-rails!
+  sass-rails (~> 4.0.0.rc1)
   simple_form
-  sprockets-rails!
   sqlite3
   turbolinks
-  uglifier (>= 1.0.3)
+  uglifier (>= 1.3.0)

@@ -3,27 +3,22 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '4.0.0.rc1'
 
-group :assets do
-  # gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'sass-rails',   github: 'rails/sass-rails'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
-  gem 'sprockets-rails', github: 'rails/sprockets-rails'
-  gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+# gem 'sprockets-rails', '~> 2.0.0.rc4'
+# gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4'
+# gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
+gem 'compass-rails', github: "milgner/compass-rails", branch: "rails4"
 
 group :development do
   gem 'sqlite3'
 end
 
 gem 'jquery-rails'
-gem 'friendly_id', github: "norman/friendly_id", branch: "rails4"
+gem 'friendly_id', github: "FriendlyId/friendly_id", branch: "rails4"
 gem 'redcarpet'
 gem 'kaminari'
 gem 'pg'
