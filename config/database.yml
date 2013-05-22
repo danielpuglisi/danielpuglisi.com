@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   database: puglisi_development
-  username: root
+  username: postgres
   passwort:
 
 # Warning: The database defined as "test" will be erased and

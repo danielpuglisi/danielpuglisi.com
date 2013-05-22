@@ -8,9 +8,6 @@ gem 'rails', '4.0.0.rc1'
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-# gem 'sprockets-rails', '~> 2.0.0.rc4'
-# gem 'compass-rails', github: 'Compass/compass-rails', branch: 'rails4'
-# gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
 gem 'compass-rails', github: "milgner/compass-rails", branch: "rails4"
 
 group :development do

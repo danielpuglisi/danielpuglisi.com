@@ -13,49 +13,57 @@
   </div>
 </div>
 
-<div class="wrapper home">
-  <div class="inner">
-    <div class="column left">
-      <h1><%= t('home.who_title') %></h1>
-      <%= raw t('home.who_body') %>
-    </div>
+<div class="box">
+  <div class="wrapper">
+    <div class="inner">
+      <h1 class="center">Recent work</h1>
 
-    <div class="column right">
-      <blockquote class="home-quote">
-        <p>&ldquo;The best reason to start an organization is to make meaning – to create a product or service to make the world a better place.&rdquo;</p>
-        <p><cite>- Guy Kawasaki</cite></p>
-      </blockquote>
-    </div>
-    <div class="clear"></div>
+      <ul class="works">
+        <li>
+          <%= image_tag "work/railsgirlsbasel.jpg" %>
+          <a href="http://railsgirls.com/basel" class="caption">
+            <span class="title center">Rails Girls Basel</span>
+            <span class="what center">Organizer, Photography</span>
+          </a>
+        </li>
+        <li>
+          <%= image_tag "work/ruvetia.jpg" %>
+          <a href="http://ruvetia.org" class="caption">
+            <span class="title center">Ruvetia</span>
+            <span class="what center">Organizer, Logo, Design</span>
+          </a>
+        </li>
+        <li>
+          <%= image_tag "work/fancytab.jpg" %>
+          <a href="https://chrome.google.com/webstore/detail/fancytab/nijnkhgjogmbghnbnfandncgdinihhab" class="caption">
+            <span class="title center">FancyTab</span>
+            <span class="what center">Photography</span>
+          </a>
+        </li>
+      </ul>
+      <div class="clear"></div>
 
-    <div class="column right">
-      <h1><%= t('home.what_title') %></h1>
-      <%= raw t('home.what_body') %>
-    </div>
+      <div class="center">
+        <%= link_to raw("Check out more &rarr;"), work_path %>
+      </div>
 
-    <div class="column left">
-      <blockquote class="home-quote">
-        <p>
-          &ldquo;Choose a job that you like, and you will never have to work a day in your life.&rdquo;
-        </p>
-        <p><cite>- Confucius</cite></p>
-      </blockquote>
     </div>
-    <div class="clear"></div>
+  </div>
+</div>
 
-    <div class="column left">
-      <h1><%= t('home.why_title') %></h1>
-      <%= raw t('home.why_body') %>
+<div class="box gray box-bottom">
+  <div class="wrapper">
+    <div class="inner">
+      <h1 class="center">Customers</h1>
+      <ul class="customers">
+        <li><%= link_to image_tag("customers/bsc.png"), "#" %></li>
+        <li><%= link_to image_tag("customers/kms-schweiz.png"), "#" %></li>
+        <li><%= link_to image_tag("customers/pia-rothen.png"), "#" %></li>
+        <li><%= link_to image_tag("customers/ska.png"), "#" %></li>
+        <li><%= link_to image_tag("customers/programmzeitung.png"), "#" %></li>
+        <li><%= link_to image_tag("customers/restaurant-froburg.png"), "#" %></li>
+      </ul>
+      <div class="clear"></div>
     </div>
-
-    <div class="column right">
-      <blockquote class="home-quote">
-        <p>
-          &ldquo;At times of change, the learners are the ones who will inherit the world, while the knowers will be beautifully prepared for a world which no longer exists.&rdquo;
-        </p>
-        <p><cite>- Alistar Smith</cite></p>
-      </blockquote>
-    </div>
-    <div class="clear"></div>
   </div>
 </div>
