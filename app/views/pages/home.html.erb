@@ -3,24 +3,20 @@
     <div class="inner">
       <div class="slogan">
         <p>
-          <%# <%= raw t('home.slogan') %1> %>
-          hey, my name is Daniel
+          <%= t('home.introduction') %>
         </p>
         <div class="fields">
           <p>
-            I'm a
+            <%= t('home.fields_start') %>
             <ul>
-              <li class="green">Designer</li>
-              <li class="yellow">Developer</li>
-              <li class="blue">Entrepreneur</li>
+              <li class="green"><%= t('home.field_1') %></li>
+              <li class="yellow"><%= t('home.field_2') %></li>
+              <li class="blue"><%= t('home.field_3') %></li>
             </ul>
           </p>
         </div>
         <div class="clear"></div>
-        <p>I solve problems, <%= mail_to "daniel@codegestalt.com", "hire me now" %></p>
-        <%# <p class="hire-me"> %>
-        <%#   <i class="icon-exclamation-sign"></i> <%= t('home.freelancer') %1>, <%= mail_to "daniel@codegestalt.com", t('home.hireme') %1>. %>
-        <%# </p> %>
+        <p><%= t('home.freelancer') %>, <%= mail_to "daniel@codegestalt.com", t('home.hireme') %></p>
       </div>
     </div>
   </div>
@@ -29,7 +25,7 @@
 <div class="box">
   <div class="wrapper">
     <div class="inner">
-      <h1 class="center">Recent work</h1>
+      <h1 class="center"><%= t('home.recent_work') %></h1>
 
       <ul class="works">
         <li>
@@ -57,7 +53,7 @@
       <div class="clear"></div>
 
       <div class="center">
-        <%= link_to raw("Check out more &rarr;"), work_path %>
+        <%= link_to raw("#{t('home.more_work')} &rarr;"), work_path %>
       </div>
 
     </div>
@@ -67,7 +63,7 @@
 <div class="box gray box-bottom">
   <div class="wrapper">
     <div class="inner">
-      <h1 class="center">Customers</h1>
+      <h1 class="center"><%= t('home.customers') %></h1>
       <ul class="customers">
         <li><%= image_tag("customers/bsc.png") %></li>
         <li><%= image_tag("customers/kms-schweiz.png") %></li>

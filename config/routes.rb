@@ -1,5 +1,10 @@
 DanielpuglisiCom::Application.routes.draw do
 
+  scope "(:locale)", locale: /de|en/ do
+    # Home
+    root :to => "pages#home"
+  end
+
   devise_for :users
 
   # Backend
@@ -7,8 +12,6 @@ DanielpuglisiCom::Application.routes.draw do
     resources :posts, path: "articles", except: [:show]
   end
 
-  # Home
-  root :to => "pages#home"
 
   # Work
   get "/work", to: "pages#work"

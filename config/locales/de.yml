@@ -1,66 +1,72 @@
 de:
   home:
-    slogan: "Hi, ich bin Daniel<br />
-             Ein passionierter Web<br />
-             Designer und Entwickler"
-    freelancer: "Ich arbeite momentan als Freelancer"
-    hireme: "heuere mich an"
+    introduction: "Hallo, mein Name ist Daniel"
+    fields_start: "Ich bin ein"
+    field_1: "Designer"
+    field_2: "Entwickler"
+    field_3: "Unternehmer"
+    freelancer: "Ich löse Probleme"
+    hireme: "heuere mich jetzt an"
 
-    who_title: "Wer?"
-    who_body: "
-      <p>
-        Ich bin ein Web Entwickler aus der Schweiz mit
-        einer Schwäche für Design und Typography. Im 2011
-        mitbegründete ich
-        <a href='http://codegestalt.com'>Codegestalt</a>
-        mit zwei Entwicklern die ich über Twitter kennen gelernt hatte.
-        Seither haben wir mehrere Projekte zusammen realisiert.
-      </p>
-      <p>
-        Meine Freizeit verbringe ich damit meine
-        <a href='http://flickr.com/photos/danielpuglisi'>Fotografie Fähigkeiten</a>
-        zu verbessern und meinen
-        <a href='/recommendations'>Filme und Bücher</a> Horizont zu erweitern.
-      </p>
-      <p>
-        Momentan arbeite ich als Freelancer. Sind Sie daran interessiert
-        meine Web Design und Entwicklungsfähigkeiten in Anspruch zu nehmen
-        dann <a href='mailto:daniel@codegestalt.com'>kontaktieren Sie mich</a> für
-        ein unverbindliches Gespräch. Ich freue mich Sie kennen zu lernen.
-      </p>
-      "
+    recent_work: "Letzte Arbeiten"
+    more_work: "Weitere Arbeiten"
+    customers: "Kunden"
 
-    what_title: "Was?"
-    what_body: "
-      <p>
-        Ich designe und erschaffe Websites und Web Applikationen seit über sechs Jahren und mehr.
-        Wenn die Sonne scheint arbeite ich für Kunden und während der Nacht arbeite ich
-        an Codegestalt und persönlichen Projekten wie
-        <a href='http://kreatify.com'>Kreatify</a> &
-        <a href='http://bridgetalks.ch'>Bridge</a>.
-      </p>
-      <p>
-        Weitere Arbeiten von mir finden Sie in der
-        <a href='/work'>Work</a> Sektion.
-        Ich bin auch als Blogger unterwegs und schreibe hin und wieder meine Gedanken in
-        meinem <a href='/articles'>Blog</a> nieder.
-      <p>
-      "
+    # who_title: "Wer?"
+    # who_body: "
+    #   <p>
+    #     Ich bin ein Web Entwickler aus der Schweiz mit
+    #     einer Schwäche für Design und Typography. Im 2011
+    #     mitbegründete ich
+    #     <a href='http://codegestalt.com'>Codegestalt</a>
+    #     mit zwei Entwicklern die ich über Twitter kennen gelernt hatte.
+    #     Seither haben wir mehrere Projekte zusammen realisiert.
+    #   </p>
+    #   <p>
+    #     Meine Freizeit verbringe ich damit meine
+    #     <a href='http://flickr.com/photos/danielpuglisi'>Fotografie Fähigkeiten</a>
+    #     zu verbessern und meinen
+    #     <a href='/recommendations'>Filme und Bücher</a> Horizont zu erweitern.
+    #   </p>
+    #   <p>
+    #     Momentan arbeite ich als Freelancer. Sind Sie daran interessiert
+    #     meine Web Design und Entwicklungsfähigkeiten in Anspruch zu nehmen
+    #     dann <a href='mailto:daniel@codegestalt.com'>kontaktieren Sie mich</a> für
+    #     ein unverbindliches Gespräch. Ich freue mich Sie kennen zu lernen.
+    #   </p>
+    #   "
 
-    why_title: "Warum?"
-    why_body: "
-      <p>
-        Since learning new stuff is essential in life and makes a lot of fun, I'm constantly pushing myself to new heights.
-        I love to experiment with new things and always try to redefine myself. Sometimes with a combination of old and new things.
-      </p>
-      <p>
-        Knowing certain things doesn't just come to you, you have to earn it yourself with constant effort and by always taking the next step.
-        I love that feeling when that *click* happens and suddenly everything turns from blur to high definition.
-      </p>
-      <p>
-        I can't get enough of building and creating stuff.
-        So if you like what I do and need someone to help you,
-        don't be shy and <a href='mailto:daniel@codegestalt.com'>contact me</a>.
-        I would love to help you.
-      </p>
-      "
+    # what_title: "Was?"
+    # what_body: "
+    #   <p>
+    #     Ich designe und erschaffe Websites und Web Applikationen seit über sechs Jahren und mehr.
+    #     Wenn die Sonne scheint arbeite ich für Kunden und während der Nacht arbeite ich
+    #     an Codegestalt und persönlichen Projekten wie
+    #     <a href='http://kreatify.com'>Kreatify</a> &
+    #     <a href='http://bridgetalks.ch'>Bridge</a>.
+    #   </p>
+    #   <p>
+    #     Weitere Arbeiten von mir finden Sie in der
+    #     <a href='/work'>Work</a> Sektion.
+    #     Ich bin auch als Blogger unterwegs und schreibe hin und wieder meine Gedanken in
+    #     meinem <a href='/articles'>Blog</a> nieder.
+    #   <p>
+    #   "
+
+    # why_title: "Warum?"
+    # why_body: "
+    #   <p>
+    #     Since learning new stuff is essential in life and makes a lot of fun, I'm constantly pushing myself to new heights.
+    #     I love to experiment with new things and always try to redefine myself. Sometimes with a combination of old and new things.
+    #   </p>
+    #   <p>
+    #     Knowing certain things doesn't just come to you, you have to earn it yourself with constant effort and by always taking the next step.
+    #     I love that feeling when that *click* happens and suddenly everything turns from blur to high definition.
+    #   </p>
+    #   <p>
+    #     I can't get enough of building and creating stuff.
+    #     So if you like what I do and need someone to help you,
+    #     don't be shy and <a href='mailto:daniel@codegestalt.com'>contact me</a>.
+    #     I would love to help you.
+    #   </p>
+    #   "
