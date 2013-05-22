@@ -3,11 +3,24 @@
     <div class="inner">
       <div class="slogan">
         <p>
-          <%= raw t('home.slogan') %>
+          <%# <%= raw t('home.slogan') %1> %>
+          hey, my name is Daniel
         </p>
-        <p class="hire-me">
-          <i class="icon-exclamation-sign"></i> <%= t('home.freelancer') %>, <%= mail_to "daniel@codegestalt.com", t('home.hireme') %>.
-        </p>
+        <div class="fields">
+          <p>
+            I'm a
+            <ul>
+              <li class="green">Designer</li>
+              <li class="yellow">Developer</li>
+              <li class="blue">Entrepreneur</li>
+            </ul>
+          </p>
+        </div>
+        <div class="clear"></div>
+        <p>I solve problems, <%= mail_to "daniel@codegestalt.com", "hire me now" %></p>
+        <%# <p class="hire-me"> %>
+        <%#   <i class="icon-exclamation-sign"></i> <%= t('home.freelancer') %1>, <%= mail_to "daniel@codegestalt.com", t('home.hireme') %1>. %>
+        <%# </p> %>
       </div>
     </div>
   </div>
@@ -56,12 +69,12 @@
     <div class="inner">
       <h1 class="center">Customers</h1>
       <ul class="customers">
-        <li><%= link_to image_tag("customers/bsc.png"), "#" %></li>
-        <li><%= link_to image_tag("customers/kms-schweiz.png"), "#" %></li>
-        <li><%= link_to image_tag("customers/pia-rothen.png"), "#" %></li>
-        <li><%= link_to image_tag("customers/ska.png"), "#" %></li>
-        <li><%= link_to image_tag("customers/programmzeitung.png"), "#" %></li>
-        <li><%= link_to image_tag("customers/restaurant-froburg.png"), "#" %></li>
+        <li><%= image_tag("customers/bsc.png") %></li>
+        <li><%= image_tag("customers/kms-schweiz.png") %></li>
+        <li><%= image_tag("customers/pia-rothen.png") %></li>
+        <li><%= image_tag("customers/ska.png") %></li>
+        <li><%= image_tag("customers/programmzeitung.png") %></li>
+        <li><%= image_tag("customers/restaurant-froburg.png") %></li>
       </ul>
       <div class="clear"></div>
     </div>

@@ -5,7 +5,7 @@ body
   padding: 80px 0
 
 .box.gray
-  background: #eee
+  background: #f4f4f4
 
 .border-top
   border-top: 1px solid $gray1 - #111
@@ -50,8 +50,8 @@ body
     p
       font-size: 28px
       line-height: 32px
-      margin-bottom: 20px
       font-weight: 600
+      margin-bottom: 20px
       +text-shadow(#000 0 0 50px)
       &:first-letter
         margin: 0
@@ -66,17 +66,15 @@ body
   background-position: center center
   background-size: cover
   .slogan
-    padding: 490px 0 0 0
-    font-size: 24px
-    .hire-me
-      // font-family: "ff-market-web", cursive
-      font-size: 16px
-      a
-        color: white
-        border-bottom: 2px dashed #fff
-        &:hover
-          color: $red1
-          border-bottom: 2px dashed $red1
+    padding: 160px 0 0 0
+    // .hire-me
+    //   font-size: 16px
+    //   a
+    //     color: white
+    //     border-bottom: 2px dashed #fff
+    //     &:hover
+    //       color: $red1
+    //       border-bottom: 2px dashed $red1
 
 .full-width-work
   padding: 120px 0
@@ -106,6 +104,27 @@ body
     +text-shadow($black1 0 1px 1px)
     +border-radius(3px)
 
+.fields
+  margin-bottom: 20px
+  line-height: 32px
+  font-weight: 600
+  margin-bottom: 20px
+  +text-shadow(#000 0 0 50px)
+  p, ul, li
+    display: inline
+    +float-left
+  li
+    position: absolute
+    margin-left: 10px
+    opacity: 0
+    font-size: 28px
+  li.green
+    color: $green
+  li.blue
+    color: $blue
+  li.yellow
+    color: $yellow1
+
 .customers
   margin-top: 40px
   text-align: center
@@ -128,7 +147,7 @@ body
       background-position: center center
       background-size: cover
       .slogan
-        padding: 250px 0 0 0
+        padding: 0px 0 0 0
 
     .pagination
       padding: 35px 0
@@ -155,9 +174,9 @@ body
 
   .full-width
     .full-width-image
-      p
-        font-size: 16px
-        line-height: 24px
+      p, li
+        font-size: 18px
+        line-height: 20px
       .button
         font-size: 16px
     .full-width-home
@@ -168,8 +187,6 @@ body
         padding: 30px 0 0 0
         p
           margin-bottom: 10px
-        .hire-me
-          font-size: 12px
 
   .column
     width: 100%

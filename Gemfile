@@ -25,9 +25,6 @@ gem 'devise', github: "plataformatec/devise", branch: "rails4"
 gem 'simple_form'
 gem 'imdb_lists'
 
-gem 'turbolinks'
-gem 'jquery-turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
 
