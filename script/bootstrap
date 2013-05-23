@@ -1,0 +1,133 @@
+#!/usr/bin/env ruby
+
+require_relative '../env.rb'
+require 'net/http'
+
+#
+# bootstrap
+#
+
+#
+# Welcome to the Bootstrap Script
+#
+puts ""
+puts "bootstrap"
+puts "========= "
+puts ""
+puts "! Logs will be written to: log/boostrap.log"
+system ("echo 'Bootstrap started at #{Time.now}' > log/bootstrap.log")
+puts ""
+
+#
+# lol constants
+#
+DB_USERNAME = ENV["LOCAL_DB_USERNAME"]
+DB_PASSWORD = ENV["LOCAL_DB_PASSWORD"]
+DB_HOST = ENV["LOCAL_DB_HOST"]
+TEST_DATABASE = ENV["LOCAL_TEST_DB"]
+DEV_DATABASE = ENV["LOCAL_DEV_DB"]
+HEROKU_PRODUCTION = ENV["HEROKU_PRODUCTION"]
+HEROKU_STAGING = ENV["HEROKU_STAGING"]
+
+#
+# Check for PostgreSQL
+#
+unless system("which psql 2>&1 > /dev/null")
+  puts "x You need to install PostgreSQL. If you use Homebrew, you can run:"
+  puts "  => brew install postgresql"
+  exit(1)
+else
+  puts "+ PostgreSQL found."
+end
+
+#
+# Check for Bundler
+#
+unless system("which bundle 2>&1 > /dev/null")
+  puts "x You need to install Bundler:"
+  puts "  => gem isntall bundler"
+  exit(1)
+else
+  puts "+ Bundler found."
+end
+
+#
+# Check for Heroku toolbelt
+#
+unless system("which heroku 2>&1 > /dev/null")
+  puts "+ You need to install the Heroku toolbelt:"
+  puts "  => https://toolbelt.heroku.com/"
+  exit(1)
+else
+  puts "+ Heroku toolbelt found."
+end
+
+#
+# Lets install some bundles
+#
+puts ""
+puts "Installing bundles..."
+system("bundle install >> log/bootstrap.log")
+
+#
+# Prepare Database
+#
+puts ""
+puts "Should we set up the dev & test Databases for you?"
+puts "WARNING: This will destroy existing databases named '#{DEV_DATABASE}'and '#{TEST_DATABASE}'!"
+print "(y)es, (n)o  =>  "
+
+case gets.strip
+  when 'Y', 'y', 'yes'
+
+    unless system("psql postgres -tAc \"SELECT 1 FROM pg_roles WHERE rolname='#{DB_USERNAME}'\"")
+      puts ""
+      puts "Creating postgres user: #{DB_USERNAME}..."
+      system("createuser -s #{DB_USERNAME}")
+    end
+
+    puts ""
+    puts "Dropping all connections to #{DEV_DATABASE}..."
+    system(%Q{psql postgres #{DB_USERNAME} --command="SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname='#{DEV_DATABASE}';" >> log/bootstrap.log})
+
+    puts "Deleting old #{DEV_DATABASE}..."
+    system("dropdb #{DEV_DATABASE} --username=#{DB_USERNAME} >> log/bootstrap.log")
+
+    puts "Creating #{DEV_DATABASE}..."
+    system("createdb --owner=#{DB_USERNAME} --username=#{DB_USERNAME} #{DEV_DATABASE} >> log/bootstrap.log")
+
+    puts "Migrating #{DEV_DATABASE}..."
+    system("rake db:migrate >> log/bootstrap.log")
+
+    puts "Seeding #{DEV_DATABASE}..."
+    system("rake db:seed >> log/bootstrap.log")
+
+    puts "Dropping all connections to #{TEST_DATABASE}..."
+    system(%Q{psql postgres #{DB_USERNAME} --command="SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname='#{TEST_DATABASE}';" >> log/bootstrap.log})
+
+    puts "Deleting old #{TEST_DATABASE}..."
+    system("dropdb #{TEST_DATABASE} --username=#{DB_USERNAME} >> log/bootstrap.log")
+
+    puts "Creating #{TEST_DATABASE}..."
+    system("createdb --owner=#{DB_USERNAME} --username=#{DB_USERNAME} #{TEST_DATABASE} >> log/bootstrap.log")
+
+    puts "Preparing #{TEST_DATABASE}..."
+    system("rake db:test:prepare >> log/bootstrap.log")
+    system("rake db:test:load >> log/bootstrap.log")
+
+    puts ""
+    puts "DATABASES ARE READY!"
+end
+
+#
+# Restart the Rails Server if it is running (for pow users)
+#
+puts ""
+puts "Restarting app..."
+system("touch tmp/restart.txt")
+
+#
+# DONE
+#
+puts ""
+puts "Sweet, my job here is done!"

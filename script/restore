@@ -1,0 +1,113 @@
+#!/usr/bin/env ruby
+
+require_relative '../env.rb'
+require 'net/http'
+
+#
+# restore
+#
+
+#
+# Welcome to the puglisi restore Script
+#
+puts ""
+puts "puglisi restore"
+puts "================ "
+puts ""
+puts "! Logs will be written to: log/restore.log"
+system ("echo 'Restore started at #{Time.now}' > log/restore.log")
+puts ""
+
+#
+# lol constants
+#
+DB_USERNAME = ENV["LOCAL_DB_USERNAME"]
+DB_PASSWORD = ENV["LOCAL_DB_PASSWORD"]
+DB_HOST = ENV["LOCAL_DB_HOST"]
+TEST_DATABASE = ENV["LOCAL_TEST_DB"]
+DEV_DATABASE = ENV["LOCAL_DEV_DB"]
+HEROKU_PRODUCTION = ENV["HEROKU_PRODUCTION"]
+HEROKU_STAGING = ENV["HEROKU_STAGING"]
+
+#
+# Check for PostgreSQL
+#
+unless system("which psql 2>&1 > /dev/null")
+  puts "x You need to install PostgreSQL. If you use Homebrew, you can run:"
+  puts "  => brew install postgresql"
+  exit(1)
+else
+  puts "+ PostgreSQL found."
+end
+
+#
+# Check for Heroku toolbelt
+#
+unless system("which heroku 2>&1 > /dev/null")
+  puts "+ You need to install the Heroku toolbelt:"
+  puts "  => https://toolbelt.heroku.com/"
+  exit(1)
+else
+  puts "+ Heroku toolbelt found."
+end
+
+#
+# Restore Database
+# TODO: This script should be able to restore a database from heroku/s3 to local or production
+#
+puts ""
+puts "Fill the Database with production data?"
+print "(y)es, (n)o => "
+
+case gets.strip
+when 'Y', 'y', 'yes'
+
+  puts ""
+  puts "Restore the database to heroku-staging or local database?"
+  print "(h)eroku, (l)ocal => "
+  case gets.strip
+  when 'h', 'heroku'
+
+    #
+    # Restoring database
+    #
+    puts "Restoring the Backup to #{HEROKU_STAGING}..."
+    puts ""
+
+    # restore database
+    url = `heroku pgbackups:url -a #{HEROKU_PRODUCTION}`
+    system("heroku pgbackups:restore DATABASE '#{url}' -a #{HEROKU_STAGING} --confirm #{HEROKU_STAGING}")
+
+  when 'l', 'local'
+    #
+    # Check for curb
+    #
+    begin
+      gem 'curb'
+    rescue
+      system("gem install curb 2>&1 > /dev/null")
+    end
+    require 'curb'
+
+    #
+    # Get the latest production backup from Heroku
+    #
+    puts ""
+    puts "Adding production data to the database..."
+
+    puts "Downloading latest Backup from production..."
+    url = `heroku pgbackups:url --app #{HEROKU_PRODUCTION}`
+    data = Curl.get(url)
+    File.open("tmp/production.dump", 'w') << data.body_str
+
+    #
+    # Restoring database
+    #
+    puts "Restoring the Backup to #{DEV_DATABASE}..."
+    puts ""
+    # create database
+    system("rake db:create")
+    # restore database
+    system("pg_restore --verbose --clean --no-acl --no-owner -h #{DB_HOST} -U #{DB_USERNAME} -d #{DEV_DATABASE} tmp/production.dump >> log/bootstrap.log")
+  end
+end
