@@ -12,7 +12,6 @@ DanielpuglisiCom::Application.routes.draw do
     resources :posts, path: "articles", except: [:show]
   end
 
-
   # Work
   get "/work", to: "pages#work"
   get "/recommendations", to: "pages#recommendations"

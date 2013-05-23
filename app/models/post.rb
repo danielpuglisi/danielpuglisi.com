@@ -6,7 +6,12 @@ class Post < ActiveRecord::Base
 
   # Scopes
   default_scope order("published_at DESC").order("published")
-  scope :published, where(published: true)
+
+  class << self
+    def published
+      where(published: true)
+    end
+  end
 
   # FriendlyId should only set slug on create
   def should_generate_new_friendly_id?
