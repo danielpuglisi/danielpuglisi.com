@@ -29,4 +29,7 @@ DanielpuglisiCom::Application.routes.draw do
 
   # Tags
   get "/tags/:id", to: "tags#show", as: :tag
+
+  # Sitemap
+  get "/sitemap.:format", to: "pages#sitemap"
 end

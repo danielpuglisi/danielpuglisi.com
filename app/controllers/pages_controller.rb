@@ -14,4 +14,9 @@ class PagesController < ApplicationController
     result = ImdbLists.fetch("http://www.imdb.com/list/aw8wqGRn0LI/")
     @movies = result.movies.sort_by{|x| x.rating}.reverse
   end
+
+  def sitemap
+    @posts = Post.published
+    @tags = Tag.all
+  end
 end
