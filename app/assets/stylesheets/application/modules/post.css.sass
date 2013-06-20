@@ -91,11 +91,29 @@
     font-weight: 200
     margin: 40px 0
 
-  footer /* for the English note */
+  .entry-footer /* for the English note */
+    margin-top: 80px
+    text-align: center
     font-size: 13px
     font-style: italic
-    #disqus_thread
-      margin-top: 30px
+    color: $black1 + #444
+    // #disqus_thread
+    //   margin-top: 30px
+    .social-media-links
+      margin-top: 20px
+      ul
+        padding: 0
+        margin: 0
+      li
+        margin-right: 20px
+        list-style: none
+        display: inline-block
+        &:last-child
+          margin-right: 0
+    .twitter-share-button
+      width: 80px !important
+    iframe
+      margin: 0
 
 .entry-archive-month
   .wrapper

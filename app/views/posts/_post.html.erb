@@ -10,6 +10,9 @@
         <%= render "posts/meta", post: post %>
       </header>
       <%= markdown(post.content) %>
+
+      <%= render "posts/footer" %>
+
     </div>
   </div>
 </article>
