@@ -6,14 +6,45 @@
         <div class="meta">Different things I like.</div>
       </header>
       <p>
-        Looking for a stunning movie <s>or a good book</s> to kill off some time?
+        Looking for a stunning movie or a good book to kill off some time?
         Please take a look at my recommendations below. If you have some
         recommendations for me, please drop me a quick <a href="mailto:daniel@codegestalt.com">message</a>.
       </p>
       <div class="recommendations clearfix">
+
         <div class="list">
           <header>
-            <h2>Movies & TV Series <span class="meta">Must watch. Sorted by Rating.</span></h2>
+            <h3>Books <span class="meta">Sorted by Category.</span></h3>
+          </header>
+          <h4>Startup</h4>
+          <ul>
+            <li><%= link_to "The 100$ Startup", "http://amzn.to/Mge8h0" %></li>
+            <li><%= link_to "Rework", "http://amzn.to/15aN26E" %></li>
+            <li><%= link_to "Getting Real", "http://amzn.to/117s9Ti" %></li>
+            <li><%= link_to "The 48 Laws of Power", "http://amzn.to/Yq5pgQ" %></li>
+            <li><%= link_to "Mastery", "http://amzn.to/117sllg" %></li>
+            <li><%= link_to "The Lean Startup", "http://amzn.to/14qmj6V" %></li>
+            <li><%= link_to "The 4-Hour Workweek", "http://amzn.to/TT2USp" %></li>
+          </ul>
+
+          <h4>Design</h4>
+          <ul>
+            <li><%= link_to "The Shape of Design", "http://www.shapeofdesignbook.com/" %></li>
+          </ul>
+
+          <h4>Self Improvement</h4>
+          <ul>
+            <li><%= link_to "Choose Yourself", "http://amzn.to/1azao78" %></li>
+            <li><%= link_to "The 4-Hour Body", "http://amzn.to/15aO6Y7" %></li>
+            <li><%= link_to "The Power of Habit", "http://amzn.to/117td9M" %></li>
+            <li><%= link_to "The 4-Hour Chef", "http://amzn.to/136uTqt" %></li>
+            <li><%= link_to "Seeking Wisdom", "http://amzn.to/117tppf" %></li>
+          </ul>
+        </div>
+
+        <div class="list">
+          <header>
+            <h3>Movies & TV Series <span class="meta">Sorted by Rating.</span></h3>
           </header>
           <ul>
             <% @movies.each do |movie| %>
@@ -21,6 +52,7 @@
             <% end %>
           </ul>
         </div>
+
     </div>
   </div>
 </article>
