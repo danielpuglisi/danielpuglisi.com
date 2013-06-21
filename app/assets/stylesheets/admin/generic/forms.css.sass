@@ -54,3 +54,15 @@ label.string, label.text, label.select, label.date, label.check_boxes
   font-size: 13px
   +text-shadow($blue - #222 0 -1px 1px)
 
+.preview-button
+  z-index: 999
+  position: absolute
+  right: 5px
+  top: -1px
+  padding: 8px 7px
+  background: $red
+  display: block
+  color: #fff
+  border-top: 1px solid $red - #111
+  &:hover
+    background: $red + #111
