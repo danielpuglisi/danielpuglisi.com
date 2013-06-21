@@ -100,6 +100,10 @@ GEM
     orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
+    posix-spawn (0.3.6)
+    pygments.rb (0.5.0)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -152,6 +156,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -167,6 +172,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   pg
+  pygments.rb
   rails (= 4.0.0.rc2)
   redcarpet
   sanitize

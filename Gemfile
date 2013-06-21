@@ -17,6 +17,7 @@ end
 gem 'jquery-rails'
 gem 'friendly_id', github: "FriendlyId/friendly_id", branch: "rails4"
 gem 'redcarpet'
+gem 'pygments.rb'
 gem 'kaminari'
 gem 'pg'
 gem 'font-awesome-sass-rails'
