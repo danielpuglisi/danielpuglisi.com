@@ -6,7 +6,7 @@
   <table>
     <thead>
       <tr>
-        <th class="center"><i class='icon-eye-open'></i></th>
+        <th class="center"></th>
         <th>Title</th>
         <th></th>
         <th></th>
@@ -16,7 +16,7 @@
     <tbody>
       <% @posts.each do |post| %>
       <tr>
-        <td class="center"><%= post.published? ? raw("<i class='icon-ok'></i>") : "" %></td>
+        <td class="center"><%= post.published? ? raw("<span class='label green'>published</span>") : raw("<span class='label blue'>draft</span>") %></td>
         <td>
           <%= link_to edit_admin_post_path(post) do %>
             <div class="details">
@@ -30,7 +30,7 @@
           <% end %>
         </td>
         <td>
-          <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post) if post.published %>
+          <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post) %>
         </td>
         <td><%= link_to raw("<i class='icon-trash'></i>"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
