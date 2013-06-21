@@ -17,7 +17,7 @@
   </div>
   <div class="box meta right">
     <% unless @post.new_record? %>
-      <%= link_to "View", permalink(@post), class: "preview-button" %>
+      <%= link_to "View", permalink(@post), class: "preview-button", target: "_blank" %>
     <% end %>
     <%= f.input :published, as: :select, prompt: false, label: false, collection: [["Draft", false],["Published", true]] %>
     <%= f.input :published_at %>
