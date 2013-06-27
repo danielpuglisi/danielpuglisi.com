@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
 
-  impressionist action: :show, :unique => [:impressionable_type, :impressionable_id, :ip_address]
-
   def index
     @title = "Blog"
     @posts = Post.published.page(params[:page]).per(10)
@@ -9,9 +7,10 @@ class PostsController < ApplicationController
   end
 
   def show
-    @current_post = Post.find_by_slug(params[:id])
+    @current_post = Post.friendly.find(params[:id])
     @title = @current_post.title
     @description = @current_post.content
+    impressionist @current_post, nil, unique: [:impressionable_type, :impressionable_id, :ip_address]
   end
 
   def archive

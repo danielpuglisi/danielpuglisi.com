@@ -8,6 +8,7 @@
       <tr>
         <th class="center"></th>
         <th>Title</th>
+        <th>Watched</th>
         <th></th>
         <th></th>
       </tr>
@@ -28,6 +29,9 @@
               <div class="meta-tags"><%= post.tags.map { |t| t.title }.join(", ") %></div>
             </div>
           <% end %>
+        </td>
+        <td class="center">
+          <%= (post.impressions_count || 0) %>
         </td>
         <td>
           <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post), target: "_blank" %>
