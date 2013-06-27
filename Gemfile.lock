@@ -1,9 +1,8 @@
 GIT
   remote: git://github.com/FriendlyId/friendly_id.git
-  revision: 78d639d67a17135fe5e3b9731fd4328c315c74b1
-  branch: rails4
+  revision: 5e6b292bb39ef5dbbe43ccbd983ff160a9408218
   specs:
-    friendly_id (4.1.0.beta.2)
+    friendly_id (5.0.0.alpha1)
 
 GIT
   remote: git://github.com/milgner/compass-rails.git
@@ -166,7 +165,7 @@ DEPENDENCIES
   compass-rails!
   devise!
   font-awesome-sass-rails
-  friendly_id!
+  friendly_id (~> 5.0.0.alpha1)!
   imdb_lists
   jbuilder (~> 1.0.1)
   jquery-rails

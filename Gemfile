@@ -15,7 +15,7 @@ group :development do
 end
 
 gem 'jquery-rails'
-gem 'friendly_id', github: "FriendlyId/friendly_id", branch: "rails4"
+gem "friendly_id", '~> 5.0.0.alpha1', github: "FriendlyId/friendly_id"
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'kaminari'

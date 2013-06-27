@@ -21,8 +21,6 @@ textarea
   // border-left: 1px solid #ccc
   font-size: 13px
   max-height: 500px
-  &:focus
-    outline-width: 0
 
 label
   // display: block
@@ -39,6 +37,24 @@ label.string, label.text, label.select, label.date, label.check_boxes
     padding: 7px 2%
     border: none
     border-bottom: 1px solid #ccc
+  input, textarea
+    &:focus
+      outline: none
+      background: $gray
+      color: $black + #222
+  .input.slug
+    padding: 0 2%
+    margin-top: -20px
+    font-size: 12px
+    color: $black + #444
+    input
+      color: $black + #444
+      font-size: 12px
+      border-bottom: 0
+      padding: 2px
+      display: inline-block
+      width: auto
+
 
 .meta
   input.string
@@ -66,3 +82,4 @@ label.string, label.text, label.select, label.date, label.check_boxes
   border-top: 1px solid $red - #111
   &:hover
     background: $red + #111
+

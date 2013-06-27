@@ -13,6 +13,11 @@
 
   <div class="box details left">
     <%= f.input :title, label: false, placeholder: "Title ..." %>
+    <% if @post.slug %>
+      <div class="input slug">
+        <%= "#{request.protocol}#{request.host_with_port}" %>/<%= @post.published_at.strftime("%Y/%m") %>/<%= f.input_field :slug, label: false, placeholder: "slug ..." %>
+      </div>
+    <% end %>
     <%= f.input :content, label: false, placeholder: "Ready, Steady, Go!" %>
   </div>
   <div class="box meta right">
