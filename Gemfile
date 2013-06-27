@@ -10,6 +10,10 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails', github: "milgner/compass-rails", branch: "rails4"
 
+group :test do
+  gem 'capybara'
+end
+
 group :development do
   gem 'sqlite3'
 end
