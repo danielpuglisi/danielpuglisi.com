@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  impressionist action: :show, :unique => [:impressionable_type, :impressionable_id, :ip_address]
+
   def index
     @title = "Blog"
     @posts = Post.published.page(params[:page]).per(10)

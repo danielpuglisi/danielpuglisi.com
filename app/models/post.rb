@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :use_title_when_slug_is_empty, use: :slugged
 
+  is_impressionable :counter_cache => true
+
   has_and_belongs_to_many :tags
 
   # Scopes
