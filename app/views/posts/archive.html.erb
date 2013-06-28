@@ -9,7 +9,7 @@
         </header>
         <% posts.each do |post| %>
           <%= link_to permalink(post), class: "entry-archive" do %>
-            <%= post.title %>
+            <div class="entry-title"><%= post.title %></div>
             <div class="meta">
               <%= post.published_at.strftime("%B %d, %Y") %>
             </div>

@@ -16,4 +16,12 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     assert_equal "Hepper jepper", find(".entry header h2").text
     assert_equal post_path(year: post.published_at.year, month: post.published_at.strftime("%m"), id: post), current_path
   end
+
+  test "archive should return articles by months" do
+    create(:post, title: "April", published_at: "2013-04-01")
+    create(:post, title: "June", published_at: "2013-06-01")
+    visit archive_path
+    assert_equal ["June, 2013", "April, 2013"], all(".entry header h2").map(&:text)
+    assert_equal ["June", "April"], all(".entry-title").map(&:text)
+  end
 end
