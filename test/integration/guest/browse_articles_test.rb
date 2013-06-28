@@ -56,6 +56,12 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     assert has_css?(".entry header h2", count: 1)
   end
 
-  test "should return articles tagged with tag" do
+  test "should return articles tagged with given tag" do
+    create(:post, title: "Peter", tag_list: "programming")
+    visit articles_path
+    find(".tags a", text: "programming").click
+    assert_equal tag_path("programming"), current_path
+    assert_equal "programming", find("h2").text
+    assert_equal ["Peter"], all(".entry-title").map(&:text)
   end
 end
