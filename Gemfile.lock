@@ -86,6 +86,7 @@ GEM
       sass-rails (>= 3.1.1)
     fssm (0.2.10)
     hike (1.2.3)
+    http_accept_language (1.0.2)
     httpclient (2.3.3)
     i18n (0.6.4)
     imdb_lists (2.1.0)
@@ -187,6 +188,7 @@ DEPENDENCIES
   factory_girl_rails
   font-awesome-sass-rails
   friendly_id (~> 5.0.0.alpha1)!
+  http_accept_language
   imdb_lists
   impressionist
   jbuilder (~> 1.0.1)
