@@ -17,6 +17,6 @@ class PagesController < ApplicationController
 
   def sitemap
     @posts = Post.published
-    @tags = Tag.all
+    @tags = Post.tag_counts
   end
 end
