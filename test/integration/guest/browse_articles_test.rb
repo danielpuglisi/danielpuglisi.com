@@ -24,4 +24,16 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     assert_equal ["June, 2013", "April, 2013"], all(".entry header h2").map(&:text)
     assert_equal ["June", "April"], all(".entry-title").map(&:text)
   end
+
+  test "should return post style" do
+    post = create(:post, title: "This is a Post", style: :post)
+    visit post_path(id: post)
+    has_css?("entry post")
+  end
+
+  test "should return link style" do
+    post = create(:post, title: "This is a Post", style: :link)
+    visit post_path(id: post)
+    has_css?("entry link")
+  end
 end
