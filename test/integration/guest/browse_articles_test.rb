@@ -46,4 +46,13 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     visit post_path(id: post, year: 2013, month: 06, day: 27)
     assert_equal 404, status_code
   end
+
+  test "should paginate articles on index action" do
+    create(:post, title: "Peter", published_at: "2013-01-01")
+    create_list(:post, 10, published_at: "2013-02-01")
+    visit articles_path
+    click_link "Next"
+    assert_equal "Peter", find(".entry header h2").text
+    assert has_css?(".entry header h2", count: 1)
+  end
 end
