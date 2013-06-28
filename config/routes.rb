@@ -28,7 +28,7 @@ DanielpuglisiCom::Application.routes.draw do
   get "/archive", to: "posts#archive"
 
   # Tags
-  get "/tags/:id", to: "tags#show", as: :tag
+  get "/tags/:id", to: "posts#tags", as: :tag
 
   # Sitemap
   get "/sitemap.:format", to: "pages#sitemap"

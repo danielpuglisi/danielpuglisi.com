@@ -1,0 +1,20 @@
+<%= render "shared/tags" %>
+
+<div class="entry">
+  <div class="wrapper">
+    <div class="inner">
+      <header>
+      <h2><%= @tag.name %></h2>
+      </header>
+      <% @posts.each do |post| %>
+        <%= link_to permalink(post), class: "entry-archive" do %>
+          <div class="entry-title"><%= post.title %></div>
+          <div class="meta">
+            <%= post.published_at.strftime("%B %d, %Y") %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

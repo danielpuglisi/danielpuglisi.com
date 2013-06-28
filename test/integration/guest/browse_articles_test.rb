@@ -55,4 +55,7 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     assert_equal "Peter", find(".entry header h2").text
     assert has_css?(".entry header h2", count: 1)
   end
+
+  test "should return articles tagged with tag" do
+  end
 end

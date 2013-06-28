@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130627180256) do
+ActiveRecord::Schema.define(version: 20130628100648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20130627180256) do
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
+  create_table "old_tags", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "old_tags", ["slug"], name: "index_old_tags_on_slug", unique: true, using: :btree
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -62,11 +71,22 @@ ActiveRecord::Schema.define(version: 20130627180256) do
     t.integer "tag_id"
   end
 
-  create_table "tags", force: true do |t|
-    t.string   "title"
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
     t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
+  end
+
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string "name"
+    t.string "slug"
   end
 
   add_index "tags", ["slug"], name: "index_tags_on_slug", unique: true, using: :btree

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_filter :get_tags
+
   def index
     @title = "Blog"
     @posts = Post.published.page(params[:page]).per(10)
@@ -25,9 +27,19 @@ class PostsController < ApplicationController
     impressionist @current_post, nil, unique: [:impressionable_type, :impressionable_id, :ip_address]
   end
 
+  def tags
+    @tag = ActsAsTaggableOn::Tag.friendly.find(params[:id])
+    @posts = Post.tagged_with(@tag.name)
+  end
+
   def archive
     @title = "Archive"
     @posts = Post.published
     @posts_months = @posts.group_by { |t| t.published_at.beginning_of_month }
   end
+
+  private
+    def get_tags
+      @tags = Post.tag_counts
+    end
 end

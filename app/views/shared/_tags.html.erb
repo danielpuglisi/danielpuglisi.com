@@ -2,7 +2,7 @@
   <div class="wrapper border-top">
     <div class="inner center">
       <div class="tags">
-        Tags: <%= raw Tag.all.map { |tag| link_to tag.title, tag }.join(", ") %>
+        Tags: <%= raw @tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ") %>
       </div>
       <div class="archive">
         <%= link_to "Archive", archive_path %>

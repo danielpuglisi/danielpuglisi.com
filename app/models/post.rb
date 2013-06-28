@@ -1,10 +1,11 @@
 class Post < ActiveRecord::Base
+
   extend FriendlyId
   friendly_id :use_title_when_slug_is_empty, use: :slugged
 
   is_impressionable counter_cache: {column_name: :impressions_count, unique: true}
 
-  has_and_belongs_to_many :tags
+  acts_as_taggable
 
   # Scopes
   default_scope { order("published_at DESC").order("published") }
