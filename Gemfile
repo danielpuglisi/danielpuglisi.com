@@ -33,6 +33,7 @@ gem 'simple_form'
 gem 'imdb_lists'
 gem 'impressionist'
 gem 'http_accept_language'
+gem 'acts-as-taggable-on'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
