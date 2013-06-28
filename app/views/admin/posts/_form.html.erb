@@ -27,7 +27,7 @@
     <%= f.input :published, as: :select, prompt: false, label: false, collection: [["Draft", false],["Published", true]] %>
     <%= f.input :published_at %>
 
-    <%= f.association :tags, as: :check_boxes %>
+    <%= f.input :tag_list, hint: "Separate multiple tags with commas" %>
 
     <%= f.input :style, label: "Type", as: :select, collection: ["post", "link"], prompt: false %>
 
