@@ -36,4 +36,14 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     visit post_path(id: post)
     has_css?("entry link")
   end
+
+  test "should return not found error when date is wrong" do
+    post = create(:post, title: "Peter", published_at: "2013-06-28")
+    visit post_path(id: post, year: 2012)
+    assert_equal 404, status_code
+    visit post_path(id: post, year: 2013, month: 05)
+    assert_equal 404, status_code
+    visit post_path(id: post, year: 2013, month: 06, day: 27)
+    assert_equal 404, status_code
+  end
 end
