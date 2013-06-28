@@ -19,7 +19,7 @@ DanielpuglisiCom::Application.routes.draw do
   # Posts
   get "/blog", to: redirect("/articles")
   get "/articles", to: "posts#index"
-  get "/articles/:year/:month(/:day)/:id", to: "posts#show", as: :post,
+  get "/articles(/:year(/:month(/:day)))/:id", to: "posts#show", as: :post,
     year:   /(19|20)\d{2}/,
     month:  /[01]?\d/,
     day:    /[0-3]?\d/

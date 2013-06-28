@@ -8,6 +8,15 @@ class PostsController < ApplicationController
 
   def show
     @current_post = Post.friendly.find(params[:id])
+    if params[:year] && !(params[:year] == @current_post.published_at.year.to_s)
+      head :not_found
+    end
+    if params[:month] && !(params[:month] == @current_post.published_at.strftime("%m").to_s)
+      head :not_found
+    end
+    if params[:day] && !(params[:day] == @current_post.published_at.strftime("%d").to_s)
+      head :not_found
+    end
     @title = @current_post.title
     @description = @current_post.content
     impressionist @current_post, nil, unique: [:impressionable_type, :impressionable_id, :ip_address]
