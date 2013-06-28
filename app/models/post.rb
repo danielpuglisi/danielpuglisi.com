@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   is_impressionable counter_cache: {column_name: :impressions_count, unique: true}
 
-  acts_as_taggable
+  acts_as_taggable rescue nil
 
   # Scopes
   default_scope { order("published_at DESC").order("published") }
