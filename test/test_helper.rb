@@ -6,7 +6,7 @@ require 'support/deffered_garbage_collection'
 
 class ActiveSupport::TestCase
 
-  # include FactoryGirl::Syntax::Methods
+  include FactoryGirl::Syntax::Methods
   include Warden::Test::Helpers
   Warden.test_mode!
 
@@ -32,8 +32,6 @@ class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
 
-  # Selenium should not use fixtrues
+  # Selenium should not use fixtures
   self.use_transactional_fixtures = false
 end
-
-require 'mocha/setup'
