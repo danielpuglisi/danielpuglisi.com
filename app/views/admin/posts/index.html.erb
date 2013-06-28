@@ -26,7 +26,7 @@
             </div>
             <div class="meta">
               <div class="meta-date"><%= post.published_at.strftime("%d.%m.%Y") if post.published_at %></div>
-              <div class="meta-tags"><%= post.tags.map { |t| t.title }.join(", ") %></div>
+              <div class="meta-tags"><%= post.tags.map { |t| t.name }.join(", ") %></div>
             </div>
           <% end %>
         </td>
