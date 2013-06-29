@@ -15,15 +15,18 @@
   <%= f.input :title, label: "Title", placeholder: "Title ...", input_html: {autocomplete: "off"}, wrapper_html: {class: "form-post-title"} %>
   <div class="meta">
     <% if @post.slug %>
-      <%= f.input :slug, label: "#{request.protocol}#{request.host_with_port}/#{@post.published_at.strftime("%Y/%m")}/", input_html: {placeholder: "slug ..."}, wrapper_html: {class: "form-post-slug"} %>
+      <%= f.input :slug,
+        input_html: {placeholder: "slug ..."},
+        wrapper_html: {class: "form-post-slug one-third"}
+      %>
     <% end %>
-    <%= f.input :published, as: :select, prompt: false, label: "Status", collection: [["Draft", false],["Published", true]] %>
-    <%= f.input :published_at %>
-    <%= f.input :style, label: "Type", as: :select, collection: ["post", "link"], prompt: false %>
+    <%= f.input :external_link, placeholder: "http://", wrapper_html: {class: "one-third"} %>
+    <%= f.input :tag_list, wrapper_html: {class: "one-third"} %>
+    <%= f.input :published, as: :select, prompt: false, label: "Status", collection: [["Draft", false],["Published", true]], wrapper_html: {class: "one-quarter"} %>
+    <%= f.input :published_at, wrapper_html: {class: "one-quarter"} %>
+    <%= f.input :style, label: "Type", as: :select, collection: ["post", "link"], prompt: false, wrapper_html: {class: "one-quarter"} %>
+    <%= f.submit class: "btn right one-quarter" %>
     <div class="clear"></div>
-    <%= f.input :external_link, placeholder: "http://" %>
-    <%= f.input :tag_list, hint: "Separate multiple tags with commas" %>
-    <%= f.submit class: "btn right" %>
     <div class="clear"></div>
   </div>
   <%= f.input :content, label: false, placeholder: "Ready, Steady, Go!", input_html: {class: "form-post-content"} %>

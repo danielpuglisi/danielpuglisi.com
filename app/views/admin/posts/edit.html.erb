@@ -1,5 +1,8 @@
 <div class="main-header">
-  <h1>Editing article</h1>
+  <h1>
+    Editing article
+    <%= link_to "View", permalink(@post), class: "right", target: "_blank" %>
+  </h1>
 </div>
 
 <%= render 'form' %>
