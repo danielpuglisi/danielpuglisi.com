@@ -1,15 +1,22 @@
 .header
-  background: $red
-  padding: 10px 0
-  color: #fff
-  line-height: 16px
-  +text-shadow($red - #222 0 -1px 1px)
+  background: $black
+  color: $white
+  // +text-shadow($black - #111 0 -1px 1px)
+  text-transform: uppercase
+  .inner
+    padding: 0
   a
     text-decoration: none
+    padding: 20px
     color: #fff
-    font-size: 13px
+    font-size: 12px
+    font-weight: 500
+    color: $white
+    display: block
+  .active
+    a
+      background: $black - #111
 
 .main-nav
   li
     float: left
-    margin-left: 10px

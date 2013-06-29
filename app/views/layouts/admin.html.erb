@@ -13,18 +13,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 <body>
-  <section class="full-width">
-    <%= render "layouts/admin/header" %>
+  <%= render "layouts/admin/header" %>
 
-    <div class="main">
-      <div class="wrapper">
-        <div class="inner">
-          <%= yield %>
-        </div>
-      </div>
+  <%= render "layouts/admin/sidebar" %>
+
+  <section class="main right">
+    <div class="inner">
+      <%= yield %>
     </div>
-
-    <%# <%= render "layouts/admin/footer" %1> %>
   </section>
+
+
+  <%# <%= render "layouts/admin/footer" %1> %>
 </body>
 </html>

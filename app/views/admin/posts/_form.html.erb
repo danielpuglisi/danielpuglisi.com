@@ -1,3 +1,4 @@
+<div class="form-post">
 <%= simple_form_for [:admin, @post] do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -11,31 +12,21 @@
     </div>
   <% end %>
 
-  <div class="box details left">
-    <%= f.input :title, label: false, placeholder: "Title ..." %>
+  <%= f.input :title, label: "Title", placeholder: "Title ...", input_html: {autocomplete: "off"}, wrapper_html: {class: "form-post-title"} %>
+  <div class="meta">
     <% if @post.slug %>
-      <div class="input slug">
-        <%= "#{request.protocol}#{request.host_with_port}" %>/<%= @post.published_at.strftime("%Y/%m") %>/<%= f.input_field :slug, label: false, placeholder: "slug ..." %>
-      </div>
+      <%= f.input :slug, label: "#{request.protocol}#{request.host_with_port}/#{@post.published_at.strftime("%Y/%m")}/", input_html: {placeholder: "slug ..."}, wrapper_html: {class: "form-post-slug"} %>
     <% end %>
-    <%= f.input :content, label: false, placeholder: "Ready, Steady, Go!" %>
-  </div>
-  <div class="box meta right">
-    <% unless @post.new_record? %>
-      <%= link_to "View", permalink(@post), class: "preview-button", target: "_blank" %>
-    <% end %>
-    <%= f.input :published, as: :select, prompt: false, label: false, collection: [["Draft", false],["Published", true]] %>
+    <%= f.input :published, as: :select, prompt: false, label: "Status", collection: [["Draft", false],["Published", true]] %>
     <%= f.input :published_at %>
-
-    <%= f.input :tag_list, hint: "Separate multiple tags with commas" %>
-
     <%= f.input :style, label: "Type", as: :select, collection: ["post", "link"], prompt: false %>
-
+    <div class="clear"></div>
     <%= f.input :external_link, placeholder: "http://" %>
-
-    <div class="actions">
-      <%= f.submit class: "btn" %>
-    </div>
+    <%= f.input :tag_list, hint: "Separate multiple tags with commas" %>
+    <%= f.submit class: "btn right" %>
+    <div class="clear"></div>
   </div>
+  <%= f.input :content, label: false, placeholder: "Ready, Steady, Go!", input_html: {class: "form-post-content"} %>
   <div class="clear"></div>
 <% end %>
+</div>
