@@ -52,3 +52,45 @@
     &:hover
       color: $black1 + #111
 
+.signup-bar
+  font-size: 13px
+  color: #fff
+  background: $red1
+  padding: 5px 0
+  +text-shadow(none)
+  #mc_embed_signup
+    // margin-right: 20px
+    input, div
+      display: inline-block
+  .left
+    font-weight: 600
+    padding: 5px 0
+  .right
+  input[type=email]
+    padding: 6px
+    width: 200px
+    font-size: 12px
+    border: none
+  .button
+    font-size: 12px
+    border: none
+    background: none
+    padding: 0
+    &:hover
+      text-decoration: underline
+      display: inline-block
+
+  // #remove-signup-bar
+  //   position: absolute
+  //   top: 10px
+  //   right: 20px
+  //   z-index: 9999
+  //   color: #fff
+
+@media (max-width: 1070px)
+  .signup-bar
+    padding: 10px 0
+    .left
+      padding: 0 0 5px 0
+    .left, .right
+      float: none
