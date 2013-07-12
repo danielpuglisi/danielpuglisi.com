@@ -6,6 +6,7 @@
         <%= render "posts/meta", post: post %>
       </header>
       <%= markdown(post.content) %>
+      <%= render "disqus" %>
     </div>
   </div>
   <%= render "posts/footer" %>
