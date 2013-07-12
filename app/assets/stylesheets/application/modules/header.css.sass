@@ -54,16 +54,17 @@
 
 .signup-bar
   font-size: 13px
-  color: #fff
-  background: $red1
-  padding: 5px 0
+  // color: #fff
+  color: $black1
+  // background: $orange
   +text-shadow(none)
   #mc_embed_signup
     // margin-right: 20px
     input, div
       display: inline-block
+      color: $black1
   .left
-    font-weight: 600
+    // font-weight: 600
     padding: 5px 0
   .right
   input[type=email]
@@ -71,6 +72,8 @@
     width: 200px
     font-size: 12px
     border: none
+    // border: 1px solid $gray1
+    border: 1px solid $gray1 - #111
   .button
     font-size: 12px
     border: none
@@ -79,6 +82,14 @@
     &:hover
       text-decoration: underline
       display: inline-block
+  .wrapper
+    padding: 20px 0
+    border-bottom: 1px solid $gray1 - #111
+  i
+    color: $red1
+    font-size: 16px
+    line-height: 8px
+    display: inline-block
 
   // #remove-signup-bar
   //   position: absolute
@@ -89,7 +100,7 @@
 
 @media (max-width: 1070px)
   .signup-bar
-    padding: 10px 0
+    // padding: 10px 0
     .left
       padding: 0 0 5px 0
     .left, .right
