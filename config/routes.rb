@@ -11,6 +11,7 @@ DanielpuglisiCom::Application.routes.draw do
   namespace "admin" do
     get "/", to: "posts#index"
     resources :posts, path: "articles", except: [:show]
+    resources :links, except: [:show]
   end
 
   # Work
