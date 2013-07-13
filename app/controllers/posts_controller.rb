@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def tags
     @tag = ActsAsTaggableOn::Tag.friendly.find(params[:id])
-    @posts = Post.tagged_with(@tag.name)
+    @posts = Post.published.tagged_with(@tag.name)
   end
 
   def archive
@@ -40,6 +40,6 @@ class PostsController < ApplicationController
 
   private
     def get_tags
-      @tags = Post.tag_counts
+      @tags = Post.published.tag_counts
     end
 end
