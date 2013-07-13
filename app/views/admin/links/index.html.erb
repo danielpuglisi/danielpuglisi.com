@@ -1,0 +1,33 @@
+<div class="main-header">
+  <h1>
+    Listing links
+    <%= link_to raw("Add a new link"), new_admin_link_path, class: "right" %>
+  </h1>
+</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Url</th>
+        <th>Description</th>
+        <th>Tags</th>
+        <th>FiW Issue</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @links.each do |link| %>
+        <tr>
+          <td><%= link.name %></td>
+          <td><%= link.url %></td>
+          <td><%= link.description %></td>
+          <td><%= link.tags.map { |t| t.name }.join(", ") %></td>
+          <td><%= link.issue %></td>
+          <td><%= link_to raw("<i class='icon-trash'></i>"), admin_link_path(link), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
