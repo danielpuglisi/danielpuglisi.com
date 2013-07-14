@@ -1,18 +1,5 @@
-<div class="form-post">
 <%= simple_form_for [:admin, @post] do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%# <%= f.input :title, label: "Title", placeholder: "Title ...", input_html: {autocomplete: "off"}, wrapper_html: {class: "form-post-title"} %1> %>
+  <%= render "shared/form_errors", object: @post %>
   <div class="meta">
     <div class="input one-whole">
       <%= f.label :title %>
@@ -45,9 +32,7 @@
     <%= f.input :style, label: "Type", as: :select, collection: ["post", "link"], prompt: false, wrapper_html: {class: "one-quarter"} %>
     <%= f.submit class: "btn right one-quarter" %>
     <div class="clear"></div>
-    <div class="clear"></div>
   </div>
   <%= f.input :content, label: false, placeholder: "Ready, Steady, Go!", input_html: {class: "form-post-content"} %>
   <div class="clear"></div>
 <% end %>
-</div>
