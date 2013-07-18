@@ -9,7 +9,7 @@
         <% end %>
         <%= render "posts/meta", post: post %>
       </header>
-      <%= markdown(post.content) %>
+      <%= markdown(liquidize(post.content)) %>
       <%= render "disqus" %>
     </div>
   </div>

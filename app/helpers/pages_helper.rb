@@ -24,6 +24,10 @@ module PagesHelper
     end
   end
 
+  def liquidize(text)
+    Liquid::Template.parse(text).render
+  end
+
   def link_to_movie(movie)
     if movie.created_at + (2*7*24*60*60) > Time.now
       new = "<span class='new'>NEW</span>"
