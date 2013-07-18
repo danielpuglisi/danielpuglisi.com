@@ -64,4 +64,18 @@ class BrowseArticlesTest < ActionDispatch::IntegrationTest
     assert_equal "programming", find("h2").text
     assert_equal ["Peter"], all(".entry-title").map(&:text)
   end
+
+  test "should not return draft without preview param" do
+    post = create(:post, published: false, title: "Awesome Post")
+    assert_raises ActiveRecord::RecordNotFound do
+      visit post_path(id: post.id)
+    end
+  end
+
+  test "should return draft with preview param" do
+    post = create(:post, published: false, title: "Awesome Post")
+    assert_nothing_raised ActiveRecord::RecordNotFound do
+      visit post_path(id: post.id, bacon: "strips")
+    end
+  end
 end

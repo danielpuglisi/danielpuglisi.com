@@ -9,7 +9,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @current_post = Post.friendly.find(params[:id])
+    post = Post.friendly
+    if params[:bacon] == "strips"
+      @current_post = post.find(params[:id])
+    else
+      @current_post = post.published.find(params[:id])
+    end
 
     # TODO: Refactor
     if params[:year] && !(params[:year] == @current_post.published_at.year.to_s)
