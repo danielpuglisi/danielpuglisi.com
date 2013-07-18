@@ -42,7 +42,7 @@
           <%= (post.impressions_count || 0) %>
         </td>
         <td>
-          <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post), target: "_blank" %>
+          <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post, bacon: "strips"), target: "_blank" %>
         </td>
         <td><%= link_to raw("<i class='icon-trash'></i>"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

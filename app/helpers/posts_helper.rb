@@ -1,7 +1,10 @@
 module PostsHelper
-  def permalink(post)
+  def permalink(post, options={})
     date = post.published_at
-    post_path(year: date.year, month: date.strftime("%m"), id: post)
+    options.merge!(id: post)
+    options.merge!(year: date.year)
+    options.merge!(month: date.strftime("%m"))
+    post_path(options)
   end
 
   def render_layout(post)
