@@ -9,8 +9,7 @@
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Url</th>
+        <th>Link</th>
         <th>Description</th>
         <th>Tags</th>
         <th>FiW Issue</th>
@@ -21,9 +20,13 @@
     <tbody>
       <% @links.each do |link| %>
         <tr>
-          <td><%= link.name %></td>
-          <td><%= link.url %></td>
-          <td><%= link.description %></td>
+          <td>
+            <div class="details">
+              <div class="title"><%= link.name %></div>
+              <div class="slug"><%= link_to link.url, link.url, target: "_blank" %></div>
+            </div>
+          </td>
+          <td><%= truncate(link.description) %></td>
           <td><%= link.tags.map { |t| t.name }.join(", ") %></td>
           <td><%= link.issue %></td>
           <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_link_path(link) %></td>
