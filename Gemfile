@@ -10,16 +10,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails', github: "milgner/compass-rails", branch: "rails4"
 
-group :test do
-  gem 'capybara'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-end
-
-group :development do
-  gem 'sqlite3'
-end
-
 gem 'jquery-rails'
 gem "friendly_id", '~> 5.0.0.alpha1', github: "FriendlyId/friendly_id"
 gem 'redcarpet'
@@ -38,3 +28,9 @@ gem 'liquid'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end

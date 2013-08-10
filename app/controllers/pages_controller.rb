@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def work
     @title = "Work"
-    @description = "Ruvetia, Codegestalt, Kreatify, Budo Sport Center, Krav Maga Self Protect, Rails Girls, Bridge, Froburg"
+    @description = "Creator of Ruvetia, Codegestalt, Kreatify, Budo Sport Center, Krav Maga Self Protect, Rails Girls, Bridge, Froburg."
   end
 
   def recommendations
