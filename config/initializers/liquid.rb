@@ -14,7 +14,7 @@ class LinksRenderer < Liquid::Tag
   def render(context)
     output = content_tag(:ul) do
       links ||= ""
-      Link.joins(:tags).where('tags.name = ? AND links.issue = ?', @tag, @issue.to_i).each do |link|
+      Issue.find_by_number(@issue).links.joins(:tags).where('tags.name = ?', @tag).order(:issue_order).each do |link|
         links += content_tag :li do
           link_output  = link_to link.name, link.url
           link_output += tag :br

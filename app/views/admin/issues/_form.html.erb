@@ -18,7 +18,7 @@
   <div class="one-whole sub-header">
     <%= link_to_add_fields "Add link", f, :links %>
   </div>
-  <ul id="sortable" data-update-url="<%= admin_links_sort_path %>">
+  <ul id="sortable" class="links-list" data-update-url="<%= admin_links_sort_path %>">
     <%= f.fields_for :links do |builder| %>
       <%= render "link_fields", f: builder %>
     <% end %>

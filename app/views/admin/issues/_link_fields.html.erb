@@ -1,9 +1,9 @@
 <li class="field" data-item-id="<%= f.object.id %>">
+  <div class="one-whole sub-header">
+    Link
+    <%= link_to "remove", '#', class: "remove_fields right" %>
+  </div>
   <div class="meta">
-    <div class="one-whole sub-header">
-      Link
-      <%= link_to "remove", '#', class: "remove_fields right" %>
-    </div>
     <div class="input one-third">
       <%= f.label :name %>
       <div class="input-inner">
