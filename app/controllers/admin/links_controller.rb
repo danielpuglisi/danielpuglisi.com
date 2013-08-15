@@ -3,7 +3,7 @@ class Admin::LinksController < AdminController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   def index
-    links = Link.scoped
+    @links = Link.scoped
 
     if params[:issue]
       @links = links.where(issue: params[:issue])
@@ -44,7 +44,8 @@ class Admin::LinksController < AdminController
     def set_link
       @link = Link.find(params[:id])
     end
+
     def link_params
-      params[:link].permit(:name, :url, :tag_list, :description, :issue)
+      params[:link].permit(:name, :url, :tag_list, :description, :issue_id)
     end
 end

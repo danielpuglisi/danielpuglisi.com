@@ -12,6 +12,7 @@ DanielpuglisiCom::Application.routes.draw do
     get "/", to: "posts#index"
     resources :posts, path: "articles", except: [:show]
     resources :links, except: [:show]
+    resources :issues, except: [:show]
   end
 
   # Work
