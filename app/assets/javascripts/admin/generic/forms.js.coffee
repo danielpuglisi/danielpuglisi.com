@@ -31,7 +31,6 @@ $ ->
     update: (e, ui) ->
       item_id = ui.item.data('item-id')
       position = ui.item.index('.link')
-      alert(position)
       $.ajax(
         type: 'POST'
         url: $(this).data('update-url')
