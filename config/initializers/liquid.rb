@@ -1,6 +1,7 @@
 class LinksRenderer < Liquid::Tag
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
+  include PagesHelper
   attr_accessor :output_buffer
 
   def initialize(tag_name, params, tokens)
@@ -17,7 +18,7 @@ class LinksRenderer < Liquid::Tag
         links += content_tag :li do
           link_output  = link_to link.name, link.url
           link_output += tag :br
-          link_output += link.description
+          link_output += markdown(link.description)
           link_output.html_safe
         end
       end
