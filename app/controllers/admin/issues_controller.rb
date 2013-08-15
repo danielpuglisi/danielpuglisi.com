@@ -17,7 +17,7 @@ class Admin::IssuesController < AdminController
     @issue = Issue.new(issue_params)
 
     if @issue.save
-      redirect_to admin_issues_path, notice: "Issue was successfully created."
+      redirect_to edit_admin_issue_path(@issue), notice: "Issue was successfully created."
     else
       render action: 'new'
     end
@@ -25,7 +25,7 @@ class Admin::IssuesController < AdminController
 
   def update
     if @issue.update(issue_params)
-      redirect_to admin_issues_path, notice: "Issue was successfully updated."
+      redirect_to edit_admin_issue_path(@issue), notice: "Issue was successfully updated."
     else
       render action: 'edit'
     end
@@ -44,7 +44,7 @@ class Admin::IssuesController < AdminController
     def issue_params
       params[:issue].permit(
         :number, :published_at,
-        links_attributes: [:name, :url, :tag_list, :description]
+        links_attributes: [:id, :_destroy, :name, :url, :tag_list, :description]
       )
     end
 end
