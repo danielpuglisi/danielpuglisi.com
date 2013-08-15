@@ -28,7 +28,9 @@
           </td>
           <td><%= truncate(link.description) %></td>
           <td><%= link.tags.map { |t| t.name }.join(", ") %></td>
-          <td><%= link.issue %></td>
+          <td>
+            <%= link_to link.issue, admin_links_path(issue: link.issue) %>
+          </td>
           <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_link_path(link) %></td>
           <td><%= link_to raw("<i class='icon-trash'></i>"), admin_link_path(link), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

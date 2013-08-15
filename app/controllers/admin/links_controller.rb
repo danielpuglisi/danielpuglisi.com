@@ -3,7 +3,11 @@ class Admin::LinksController < AdminController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
 
   def index
-    @links = Link.all
+    links = Link.scoped
+
+    if params[:issue]
+      @links = links.where(issue: params[:issue])
+    end
   end
 
   def new
