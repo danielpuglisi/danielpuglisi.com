@@ -1,0 +1,25 @@
+<%= simple_form_for [:admin, @issue] do |f| %>
+  <%= render "shared/form_errors", object: @issue %>
+
+  <div class="meta">
+    <div class="input one-third">
+      <%= f.label :number %>
+      <div class="input-inner">
+        <%= f.input_field :number %>
+      </div>
+    </div>
+
+    <%= f.input :published_at, wrapper_html: {class: "one-third"} %>
+
+    <%= f.submit class: "btn one-third" %>
+    <div class="clear"></div>
+  </div>
+
+  <div class="one-whole sub-header">
+    <%= link_to_add_fields "Add link", f, :links %>
+  </div>
+  <%= f.fields_for :links do |builder| %>
+    <%= render "link_fields", f: builder %>
+  <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,32 @@
+<div class="field">
+  <div class="meta">
+    <div class="one-whole sub-header">
+      Link
+      <%= link_to "remove", '#', class: "remove_fields right" %>
+    </div>
+    <div class="input one-third">
+      <%= f.label :name %>
+      <div class="input-inner">
+        <%= f.input_field :name, placeholder: "Name" %>
+      </div>
+    </div>
+
+    <div class="input one-third">
+      <%= f.label :url, "URL" %>
+      <div class="input-inner">
+        <%= f.input_field :url, placeholder: "http://" %>
+      </div>
+    </div>
+
+    <div class="input one-third">
+      <%= f.label :tag_list %>
+      <div class="input-inner">
+        <%= f.input_field :tag_list %>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <%= f.input :description, label: false, placeholder: "Description...", input_html: {class: "form-post-content one-whole"} %>
+  <%= f.hidden_field :_destroy %>
+  <div class="clear"></div>
+</div>
