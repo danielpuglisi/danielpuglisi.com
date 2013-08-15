@@ -18,8 +18,10 @@
   <div class="one-whole sub-header">
     <%= link_to_add_fields "Add link", f, :links %>
   </div>
-  <%= f.fields_for :links do |builder| %>
-    <%= render "link_fields", f: builder %>
-  <% end %>
+  <ul id="sortable" data-update-url="<%= admin_links_sort_path %>">
+    <%= f.fields_for :links do |builder| %>
+      <%= render "link_fields", f: builder %>
+    <% end %>
+  </ul>
   </div>
 <% end %>

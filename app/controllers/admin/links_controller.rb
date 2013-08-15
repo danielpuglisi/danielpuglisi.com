@@ -40,6 +40,16 @@ class Admin::LinksController < AdminController
     redirect_to admin_links_path, notice: "Link was successfully destroyed."
   end
 
+  def sort
+    @link = Link.find(params[:id])
+
+    @link.attributes = params[:link].permit(:id, :issue_order_position)
+    @link.save
+
+    # this action will be called via ajax
+    render nothing: true
+  end
+
   private
     def set_link
       @link = Link.find(params[:id])

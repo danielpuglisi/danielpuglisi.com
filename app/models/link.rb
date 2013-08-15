@@ -8,6 +8,8 @@ class Link < ActiveRecord::Base
 
   belongs_to :issue
 
+  default_scope order(:issue_order)
+
   def url=(url)
     write_attribute(:url, url.match(/(.*[^\/])\/*$/)[1])
   end

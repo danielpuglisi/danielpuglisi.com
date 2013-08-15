@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'compass-rails', github: "milgner/compass-rails", branch: "rails4"
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "friendly_id", '~> 5.0.0.alpha1', github: "FriendlyId/friendly_id"
 gem 'redcarpet'
 gem 'pygments.rb'
