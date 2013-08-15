@@ -23,14 +23,15 @@ $ ->
 
   $('#sortable').sortable(
     # axis: 'y'
-    items: 'li'
+    # items: 'li'
 
     # highlight the row on drop to indicate an update
     stop: (e, ui) ->
       ui.item.find('.sub-header').effect('highlight', {}, 1000)
     update: (e, ui) ->
       item_id = ui.item.data('item-id')
-      position = ui.item.index()
+      position = ui.item.index('.link')
+      alert(position)
       $.ajax(
         type: 'POST'
         url: $(this).data('update-url')

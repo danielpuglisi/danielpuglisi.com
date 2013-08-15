@@ -19,6 +19,7 @@ class Admin::LinksController < AdminController
 
   def create
     @link = Link.new(link_params)
+    @link.issue_order_position = 0
 
     if @link.save
       redirect_to admin_links_path, notice: "Link was successfully created."
@@ -43,7 +44,7 @@ class Admin::LinksController < AdminController
   def sort
     @link = Link.find(params[:id])
 
-    @link.attributes = params[:link].permit(:id, :issue_order_position)
+    @link.issue_order_position = params[:link]["issue_order_position"]
     @link.save
 
     # this action will be called via ajax

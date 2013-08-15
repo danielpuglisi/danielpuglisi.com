@@ -1,9 +1,11 @@
 namespace :migrate do
   task :links => :environment do
 
-    Link.all.each do |link|
-      link.issue_order_position = link.id
-      link.save
+    Issue.find_each do |issue|
+      issue.links.each_with_index do |link, i|
+        link.issue_order_position = i
+        link.save
+      end
     end
   end
 end
