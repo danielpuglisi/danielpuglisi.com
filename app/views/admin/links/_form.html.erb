@@ -23,12 +23,7 @@
       </div>
     </div>
 
-    <div class="input one-quarter">
-      <%= f.label :issue, "FiW Issue" %>
-      <div class="input-inner">
-        <%= f.input_field :issue %>
-      </div>
-    </div>
+    <%= f.association :issue, label_method: :number, wrapper_html: {class: "one-quarter"} %>
     <%= f.submit class: "btn one-quarter" %>
     <div class="clear"></div>
   </div>
