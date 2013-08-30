@@ -1,0 +1,10 @@
+<article class="entry issue-link">
+  <div class="wrapper">
+    <div class="inner">
+      <p>
+        <%= link_to link.name, link.url, target: "_blank" %> <span class="issue-link-tags"><%= raw link.tags.map{|t| "<b>#{link_to(t.name, links_path(q: t.name))}</b>"}.join(", ") %></span><br />
+        <span class="issue-link-url"><em><%= link_to link.url, link.url, target: "_blank" %></em></span>
+      </p>
+    </div>
+  </div>
+</article>

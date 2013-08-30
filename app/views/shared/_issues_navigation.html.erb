@@ -1,0 +1,16 @@
+<div class="full-width-box issues-navigation">
+  <div class="wrapper border-top">
+    <div class="inner center">
+      <div class="links-search left">
+        <%= form_tag links_path, method: :get do %>
+          <%= text_field_tag :q, nil, placeholder: "Enter a search keyword", value: params[:q] %>
+          <%= submit_tag "Search Links" %>
+        <% end %>
+      </div>
+      <div class="right">
+        <%= link_to "Issues", issues_path %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

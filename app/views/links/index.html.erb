@@ -1,0 +1,11 @@
+<%= render "shared/issues_navigation" %>
+
+<% @links.each do |link| %>
+  <%= render link %>
+<% end %>
+
+<div class="full-width">
+  <div class="wrapper">
+    <%= paginate @links %>
+  </div>
+</div>

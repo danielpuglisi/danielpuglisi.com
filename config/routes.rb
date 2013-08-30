@@ -20,6 +20,9 @@ DanielpuglisiCom::Application.routes.draw do
   get "/work", to: "pages#work"
   get "/recommendations", to: "pages#recommendations"
 
+  # Posts Redirects
+  get "/articles(/:year(/:month(/:day)))/friday-is-webday-issue-:id", to: redirect{ |p, req| "/fridayiswebday/issues/#{p[:id]}" }
+
   # Posts
   get "/blog", to: redirect("/articles")
   get "/articles", to: "posts#index"
@@ -33,6 +36,13 @@ DanielpuglisiCom::Application.routes.draw do
 
   # Tags
   get "/tags/:id", to: "posts#tags", as: :tag
+
+  # Links
+  scope "fridayiswebday" do
+    get "/", to: "links#index", as: :links
+    get "/subscribe", to: "subscriptions#new", as: :new_subscription
+    resources :issues, only: [:index, :show]
+  end
 
   # Sitemap
   get "/sitemap.:format", to: "pages#sitemap"

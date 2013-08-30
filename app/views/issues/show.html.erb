@@ -1,0 +1,18 @@
+<%= render "shared/issues_navigation" %>
+
+<article class="entry post">
+  <div class="wrapper">
+    <div class="inner">
+      <header>
+        <h2>Friday is Webday Issue #<%= @issue.number %></h2>
+        <div class="meta">
+          <%= @issue.published_at.strftime("%B %d, %Y") %>
+          - <%= link_to "permalink", @issue %>
+        </div>
+      </header>
+      <%= markdown(liquidize(@issue.body)) %>
+      <%# <%= render "disqus" %1> %>
+    </div>
+  </div>
+  <%= render "posts/footer" %>
+</article>

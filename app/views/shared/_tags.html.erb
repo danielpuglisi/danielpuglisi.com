@@ -1,10 +1,10 @@
 <div class="full-width-box articles-navigation">
   <div class="wrapper border-top">
     <div class="inner center">
-      <div class="tags">
+      <div class="tags left">
         Tags: <%= raw @tags.map { |tag| link_to tag.name, tag_path(tag) }.join(", ") %>
       </div>
-      <div class="archive">
+      <div class="archive right">
         <%= link_to "Archive", archive_path %>
       </div>
       <div class="clear"></div>

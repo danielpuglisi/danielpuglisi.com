@@ -1,10 +1,14 @@
 namespace :migrate do
   task :issues => :environment do
 
-    date = "2013-07-05".to_date
-    8.times do |i|
-      i = i + 1
-      Issue.create(number: i, published_at: date + (7 * (i-1)).day)
+    (1..9).each do |i|
+      p "Migrating to issue ##{i}"
+      post_content = Post.find_by_title("Friday is Webday Issue ##{i}").content
+
+      issue = Issue.find_by_number(i)
+      issue.body = post_content
+      issue.published = true
+      issue.save
     end
 
   end

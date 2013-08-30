@@ -121,6 +121,8 @@ GEM
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
     pg (0.16.0)
+    polyamorous (0.6.3)
+      activerecord (>= 3.0)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
     pygments.rb (0.5.2)
@@ -145,6 +147,10 @@ GEM
     rake (10.1.0)
     ranked-model (0.3)
       activerecord (>= 3.1.12)
+    ransack (1.0.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     redcarpet (3.0.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -208,6 +214,7 @@ DEPENDENCIES
   pygments.rb
   rails (= 4.0.0)
   ranked-model
+  ransack
   redcarpet
   sanitize
   sass-rails (~> 4.0.0)
