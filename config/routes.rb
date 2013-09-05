@@ -41,6 +41,9 @@ DanielpuglisiCom::Application.routes.draw do
   scope "fridayiswebday" do
     get "/", to: "links#index", as: :links
     get "/subscribe", to: "subscriptions#new", as: :new_subscription
+    post "/subscribe", to: "subscriptions#create", as: :subscription
+    get "/confirm", to: "subscriptions#confirm", as: :confirm_subscription
+    get "/example", to: "subscriptions#example", as: :example_issue
     resources :issues, only: [:index, :show]
   end
 

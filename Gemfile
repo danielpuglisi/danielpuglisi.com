@@ -28,6 +28,7 @@ gem 'acts-as-taggable-on'
 gem 'liquid'
 gem 'ranked-model'
 gem 'ransack'
+gem 'mailchimp-api'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
