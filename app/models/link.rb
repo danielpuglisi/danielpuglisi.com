@@ -10,6 +10,7 @@ class Link < ActiveRecord::Base
   ranks :issue_order, with_same: :issue_id
 
   default_scope { rank(:issue_order) }
+  scope :published, -> { includes(:issue).where("issues.published = ? OR links.issue_id IS ?", true, nil).references(:issue) }
 
   def url=(url)
     write_attribute(:url, url.match(/(.*[^\/])\/*$/)[1])

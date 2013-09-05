@@ -9,6 +9,7 @@
   <table>
     <thead>
       <tr>
+        <th>Status</th>
         <th>Number</th>
         <th>Published at</th>
         <th>Links</th>
@@ -19,7 +20,8 @@
     <tbody>
       <% @issues.each do |issue| %>
         <tr>
-          <td><%= issue.number %></td>
+          <td><%= issue.published? ? raw("<span class='label green'>published</span>") : raw("<span class='label blue'>draft</span>") %></td>
+          <td>Friday is Webday Issue #<%= issue.number %></td>
           <td><%= issue.published_at.strftime("%d.%m.%Y") %></td>
           <td><%= issue.links.count %></td>
           <td><%= link_to raw("<i class='icon-pencil'></i>"), edit_admin_issue_path(issue) %></td>
