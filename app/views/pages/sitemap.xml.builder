@@ -7,6 +7,16 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
   end
 
   xml.url do
+    xml.loc new_subscription_url
+    xml.priority 0.9
+  end
+
+  xml.url do
+    xml.loc example_issue_url
+    xml.priority 0.9
+  end
+
+  xml.url do
     xml.loc work_url
     xml.priority 0.9
   end
