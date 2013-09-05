@@ -5,32 +5,33 @@ class SubscriptionsController < ApplicationController
 
   def create
     email = params[:email]
-    # redirect_to new_subscription_path, alert: "No email address was given." if email.nil?
 
     set_subscription_session(email)
 
     if session[:subscription]
-      if session[:subscription][:status] == "subscribed"
+      case session[:subscription][:status]
+      when "subscribed"
         redirect_to links_path
-      else
+      when "pending"
         redirect_to confirm_subscription_path
+      when "unsubscribed"
+        subscribe(email)
       end
     else
-      begin
-        @mc.lists.subscribe ENV["MAILCHIMP_LIST_ID"], "email" => email
-        redirect_to confirm_subscription_path
-      rescue Mailchimp::ListAlreadySubscribedError
-        redirect_to new_subscription_path, alert: "You're already subscribed..."
-      end
+      subscribe(email)
     end
   end
 
   def confirm
-    set_subscription_session
-
     if session[:subscription]
-      if session[:subscription][:status] == "subscribed"
+
+      set_subscription_session(session[:subscription][:email])
+
+      case session[:subscription][:status]
+      when "subscribed"
         redirect_to links_path
+      when "unsubscribed"
+        redirect_to new_subscription_path
       end
     else
       redirect_to new_subscription_path
@@ -44,10 +45,6 @@ class SubscriptionsController < ApplicationController
   private
     def set_subscription_session(email=nil)
 
-      if session[:subscription]
-        email = session[:subscription][:email]
-      end
-
       if email.present?
         member_info = @mc.lists.member_info ENV["MAILCHIMP_LIST_ID"], [{"email" => email}]
 
@@ -57,6 +54,15 @@ class SubscriptionsController < ApplicationController
         else
           session[:subscription] = nil
         end
+      end
+    end
+
+    def subscribe(email)
+      begin
+        @mc.lists.subscribe ENV["MAILCHIMP_LIST_ID"], "email" => email
+        redirect_to confirm_subscription_path
+      rescue Mailchimp::ListAlreadySubscribedError
+        redirect_to links_path, notice: "You're already subscribed..."
       end
     end
 end
