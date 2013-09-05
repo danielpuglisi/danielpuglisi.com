@@ -4,7 +4,7 @@ class LinksController < ApplicationController
 
   def index
     q = params[:q]
-    @links = Link.published.search(name_or_url_or_tags_name_cont: q).result(distinct: true)
+    @links = Link.published.order("links.created_at DESC").search(name_or_url_or_tags_name_cont: q).result(distinct: true)
     @links = @links.page(params[:page]).per(30)
   end
 end
