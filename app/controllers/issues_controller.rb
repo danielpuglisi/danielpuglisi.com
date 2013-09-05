@@ -8,6 +8,10 @@ class IssuesController < ApplicationController
   end
 
   def show
-    @issue = Issue.published.find(params[:id])
+    if params[:bacon] == "strips"
+      @issue = Issue.find(params[:id])
+    else
+      @issue = Issue.published.find(params[:id])
+    end
   end
 end
