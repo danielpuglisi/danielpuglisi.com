@@ -43,7 +43,7 @@ class Admin::IssuesController < AdminController
 
     def issue_params
       params[:issue].permit(
-        :number, :published_at,
+        :number, :published_at, :body,
         links_attributes: [:id, :_destroy, :name, :url, :tag_list, :description]
       )
     end
