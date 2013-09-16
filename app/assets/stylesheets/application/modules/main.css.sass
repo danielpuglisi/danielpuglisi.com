@@ -2,7 +2,7 @@ body
   background: white
 
 .box
-  padding: 80px 0
+  padding: 5rem 0
 
 .box.gray
   background: #f4f4f4
@@ -11,18 +11,18 @@ body
   border-top: 1px solid $gray1 - #111
 
 .box-bottom
-  margin-bottom: -12px
+  margin-bottom: -1rem
 
 .full-width
   width: 100%
   margin: 0 auto
   .wrapper
     .inner
-      padding: 0 20px
+      padding: 0 1.5rem
 
 .full-width-box
   .wrapper
-    padding: 80px 0
+    padding: 5rem 0
   .border-top
     border-top: 1px solid $gray1 - #111
 
@@ -30,14 +30,14 @@ body
   font-size: 12px
   line-height: 18px
   .wrapper
-    padding: 20px 0
+    padding: 1.5rem 0
   .left
     text-align: left
   .right
     text-align: right
 
 .issues-navigation
-  line-height: 30px
+  line-height: 2rem
 
 .full-width-image
   font-family: "proxima-nova", sans-serif
@@ -45,17 +45,15 @@ body
   position: relative
   color: #fff
   font-weight: 900
-  padding: 80px 0
+  padding: 5rem 0
   +text-shadow(none)
   .slogan
     p
-      font-size: 28px
-      line-height: 32px
+      font-size: 1.8rem
+      line-height: 2rem
       font-weight: 600
-      margin-bottom: 20px
+      margin-bottom: 1.5rem
       +text-shadow(#000 0 0 50px)
-      &:first-letter
-        margin: 0
 
 // Home specific
 
@@ -86,16 +84,13 @@ body
   h1,h2,h3
     font-family: "proxima-nova", sans-serif
     text-transform: uppercase
-    font-size: 24px
+    font-size: 1.5rem
     font-weight: 900
-
-.home-quote
-  margin-top: 80px
 
 .pagination
   border-top: 1px solid $gray1 - #111
   font-size: 12px
-  padding: 48px 0
+  padding: 3rem 0
   text-align: center
   span a, .gap, .current
     padding: 4px 12px
@@ -106,10 +101,9 @@ body
     +border-radius(3px)
 
 .fields
-  margin-bottom: 20px
-  line-height: 32px
+  line-height: 2rem
   font-weight: 600
-  margin-bottom: 20px
+  margin-bottom: 1.5rem
   +text-shadow(#000 0 0 50px)
   p, ul, li
     display: inline
@@ -118,7 +112,7 @@ body
     position: absolute
     margin-left: 10px
     opacity: 0
-    font-size: 28px
+    font-size: 1.8rem
   li.green
     color: $green
   li.blue
@@ -127,12 +121,14 @@ body
     color: $yellow1
 
 .customers
-  margin-top: 40px
+  margin-top: 3rem
   text-align: center
   li
-    margin: 20px
+    margin: 1.5rem
     display: inline
     width: auto
+  img
+    max-width: 100%
 
 @media (max-width: 1070px)
 
@@ -140,18 +136,18 @@ body
     .wrapper
       width: 100%
       .inner
-        padding: 0 40px
+        padding: 0 3rem
 
     .full-width-home
       height: 400px
-      padding: 200px 0 40px 0
+      padding: 200px 0 3rem 0
       background-position: center center
       background-size: cover
       .slogan
         padding: 0px 0 0 0
 
     .pagination
-      padding: 35px 0
+      padding: 1rem 0
       width: 100%
 
 @media (max-width: 720px)
@@ -168,7 +164,7 @@ body
       width: 100%
 
   .pagination
-    padding: 30px 0
+    padding: 2rem 0
     .extended
       display: none
     font-size: 13px
@@ -179,13 +175,13 @@ body
         font-size: 18px
         line-height: 20px
       .button
-        font-size: 16px
-    .full-width-home
+        font-size: 1rem
+    .full-width-hom
       height: 160px
       background-position: center center
       background-size: cover
       .slogan
-        padding: 30px 0 0 0
+        padding: 2rem 0 0 0
         p
           margin-bottom: 10px
 

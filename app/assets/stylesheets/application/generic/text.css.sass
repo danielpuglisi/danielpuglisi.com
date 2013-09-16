@@ -3,10 +3,9 @@
 
 body
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  line-height: 22px
+  font-size: em(16px)
+  line-height: 2rem
   color: $black1
-  font-size: $default-font-size
-  +text-shadow(#fff 0 1px 1px)
 
 a
   color: $red1
@@ -20,29 +19,23 @@ strong, b
 em, i
   font-style: italic
 
-s
-  +text-shadow(none)
-
 h1, h2
-  font-size: 32px
-  line-height: 48px
+  font-size: 2rem
+  line-height: 3rem
   color: black
   font-weight: 200
 
 h3
-  font-size: 20px
+  font-size: em(20px)
   font-weight: 600
-  line-height: 48px
+  line-height: 3rem
 
 h4
   font-weight: 600
-  line-height: 48px
+  line-height: 3rem
 
 p
-  font-size: 16px
-  line-height: 32px
-  &:first-letter
-    margin-left: 40px
+  margin-bottom: 2rem
   &:last-child
     margin-bottom: 0
 
@@ -54,7 +47,7 @@ p
 
 .button
   background: $red1
-  padding: 8px 16px
+  padding: 0.5rem 1rem
   color: #fff
   +border-radius(5px)
   a
@@ -65,11 +58,9 @@ p
 
 blockquote
   p
-    font-size: 32px
-    line-height: 40px
     font-style: italic
   cite
-    font-size: 16px
+    font-size: 1rem
     font-style: normal
     color: $black1 + #444
 
@@ -84,12 +75,12 @@ small
 
 .link
   h2
-    font-size: 22px
+    font-size: 1.5rem
     color: $red1 + #666
-    line-height: 34px
+    line-height: 2rem
     a
       border-bottom: 1px solid $gray1 - #202020
-      font-size: 24px
+      font-size: 1.5rem
       &:hover
         border-bottom: 1px solid $red1
 
@@ -98,40 +89,20 @@ small
 .quote
   blockquote
     p
-      font-size: 24px
-      line-height: 40px
+      font-size: 1.5rem
+      line-height: 3rem
     cite
-      font-size: 15px
+      font-size: 1rem
       font-weight: bold
-
-// Category layout
-
-.full-width
-  .category-title
-    .wrapper
-      padding-bottom: 20px
-
-.category-posts
-  padding-bottom: 90px
-
-.full-width
-  .entry-tag
-    .wrapper
-      border-top: none
-      padding: 0px 0 0px 0
-    header
-      h2
-        font-size: 24px
-        margin-bottom: 0
 
 // Syntax Highlighting
 
 div.highlight
   +text-shadow(none)
-  font-size: 14px
+  font-size: em(14px)
   background-color: #002B36
-  padding: 12px
+  padding: em(12px)
   // border: 1px solid $gray1 - #111
-  margin: 40px 0
-  overflow: hidden
+  margin: 3rem 0
+  overflow: auto
   font-family: 'Bitstream Vera Sans Mono','Courier', monospace
