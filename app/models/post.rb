@@ -3,8 +3,6 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :use_title_when_slug_is_empty, use: :slugged
 
-  is_impressionable counter_cache: {column_name: :impressions_count, unique: true}
-
   acts_as_taggable rescue nil
 
   # Scopes

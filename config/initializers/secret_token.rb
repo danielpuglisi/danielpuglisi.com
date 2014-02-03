@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DanielpuglisiCom::Application.config.secret_key_base = 'a19875232832b89710545f8d9af3d70f59d693816b5047bfbaa76eb6a9366e457de202ce6ddb473f34b1e0c3eb99bb988da9a43efcc7c10bd4818872ecead3fd'
+DanielpuglisiCom::Application.config.secret_key_base = '4fd0abd1649df33e3a90253cf194d937e78f500b06b8933ef4e9f2f92fc54a19bc894393b0425a91d85fdff41b25fbe60e5d294c83422b5f0838dcdfde311def'

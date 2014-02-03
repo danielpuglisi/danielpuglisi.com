@@ -1,9 +1,8 @@
 <section class="signup-bar" id="signup-bar">
   <div class="wrapper">
     <div class="inner">
-      <%# <%= link_to raw("<i class='icon-remove'></i>"), "#", id: "remove-signup-bar" %1> %>
       <div class="left">
-        <i class="icon-star"></i> Get free access to the <%= link_to "Friday Is Webday Link Collection", links_path %> and receive weekly updates.
+        <%= fa_icon "star" %> Get free access to the <%= link_to "Friday Is Webday Link Collection", links_path %> and receive weekly updates.
       </div>
       <div class="right">
 
@@ -36,7 +35,7 @@
           <li class="first"><%= link_to "Work", work_path %></li>
           <li><%= link_to "Articles", articles_path %></li>
           <li class="last"><%= link_to "Links", links_path %></li>
-          <li class="red"><%= mail_to "daniel@codegestalt.com", raw("<i class='icon-envelope-alt'></i>") %></li>
+          <li class="red"><%= mail_to "daniel@codegestalt.com", fa_icon("envelope") %></li>
         </ul>
       </div>
       <div class="clear"></div>

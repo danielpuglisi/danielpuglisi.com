@@ -14,7 +14,6 @@
         <th>Title</th>
         <th>Published at</th>
         <th>Tags</th>
-        <th>Visited</th>
         <th></th>
         <th></th>
       </tr>
@@ -37,9 +36,6 @@
         </td>
         <td>
           <%= post.tags.map { |t| t.name }.join(", ") %>
-        </td>
-        <td>
-          <%= (post.impressions_count || 0) %>
         </td>
         <td>
           <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post, bacon: "strips"), target: "_blank" %>
