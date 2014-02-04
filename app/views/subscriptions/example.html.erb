@@ -12,7 +12,6 @@
         <h2>Friday is Webday Issue #<%= @issue.number %></h2>
         <div class="meta">
           <%= @issue.published_at.strftime("%B %d, %Y") %>
-          - <%= link_to "permalink", @issue %>
         </div>
       </header>
       <%= markdown(liquidize(@issue.body)) %>

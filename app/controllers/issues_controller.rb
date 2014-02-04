@@ -9,9 +9,9 @@ class IssuesController < ApplicationController
 
   def show
     if params[:bacon] == "strips"
-      @issue = Issue.find(params[:id])
+      @issue = Issue.find_by(number: params[:number])
     else
-      @issue = Issue.published.find(params[:id])
+      @issue = Issue.published.find_by(number: params[:number])
     end
   end
 end

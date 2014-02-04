@@ -8,7 +8,7 @@
         <h2><%= month.strftime("%B, %Y") %></h2>
         </header>
         <% issues.each do |issue| %>
-          <%= link_to issue, class: "entry-archive" do %>
+          <%= link_to issue_path(issue.number), class: "entry-archive" do %>
             <div class="entry-title">Friday is Webday Issue #<%= issue.number %></div>
             <div class="meta">
               <%= issue.published_at.strftime("%B %d, %Y") %>

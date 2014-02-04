@@ -44,7 +44,8 @@ DanielpuglisiCom::Application.routes.draw do
     post "/subscribe", to: "subscriptions#create", as: :subscription
     get "/confirm", to: "subscriptions#confirm", as: :confirm_subscription
     get "/example", to: "subscriptions#example", as: :example_issue
-    resources :issues, only: [:index, :show]
+    get "/issues", to: "issues#index"
+    get "/issues/:number", to: "issues#show", as: :issue
   end
 
   # Sitemap
