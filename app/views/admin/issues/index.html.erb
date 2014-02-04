@@ -24,6 +24,13 @@
           <td>Friday is Webday Issue #<%= issue.number %></td>
           <td><%= issue.published_at.strftime("%d.%m.%Y") %></td>
           <td><%= issue.links.count %></td>
+          <td>
+            <% if issue.published? %>
+              <%= link_to fa_icon("eye"), issue_path(issue.number), target: "_blank" %>
+            <% else %>
+              <%= link_to fa_icon("eye"), issue_path(issue.number, bacon: "strips"), target: "_blank" %>
+            <% end %>
+          </td>
           <td><%= link_to fa_icon("pencil"), edit_admin_issue_path(issue) %></td>
           <td><%= link_to fa_icon("trash-o"), admin_issue_path(issue), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

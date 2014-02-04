@@ -1,6 +1,11 @@
 <div class="main-header">
   <h1>
     Editing issue
+    <% if @issue.published? %>
+      <%= link_to fa_icon("eye", text: "Live Version"), issue_path(@issue.number), target: "_blank", class: "right" %>
+    <% else %>
+      <%= link_to fa_icon("eye", text: "Live Version"), issue_path(@issue.number, bacon: "strips"), target: "_blank", class: "right" %>
+    <% end %>
   </h1>
 </div>
 
