@@ -29,7 +29,6 @@ class PostsController < ApplicationController
 
     @title = @current_post.title
     @description = @current_post.content
-    impressionist @current_post, nil, unique: [:impressionable_type, :impressionable_id, :ip_address]
   end
 
   def tags
