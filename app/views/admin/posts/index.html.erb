@@ -38,9 +38,9 @@
           <%= post.tags.map { |t| t.name }.join(", ") %>
         </td>
         <td>
-          <%= link_to raw("<i class='icon-eye-open'></i>"), permalink(post, bacon: "strips"), target: "_blank" %>
+          <%= link_to fa_icon("eye"), permalink(post, bacon: "strips"), target: "_blank" %>
         </td>
-        <td><%= link_to raw("<i class='icon-trash'></i>"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("trash-o"), admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     </tbody>
