@@ -6,12 +6,15 @@ $ ->
   $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()
     regexp = new RegExp($(this).data('id'), 'g')
-    $(this).parent().after($(this).data('fields').replace(regexp, time))
+    $('.links-list').prepend($(this).data('fields').replace(regexp, time))
+    $("textarea").autogrow()
     event.preventDefault()
 
   $('form').on 'click', '.remove_fields', (event) ->
-    $(this).closest('.field').find('input[type=hidden]').val('1')
-    $(this).closest('.field').hide()
+    field = $(@).closest('.field')
+    field.find('.input').remove() # otherwise chrome throws an exception if name or url are empty
+    field.find('.destroy-link').val('1')
+    field.hide()
     event.preventDefault()
 
   # Sortable
