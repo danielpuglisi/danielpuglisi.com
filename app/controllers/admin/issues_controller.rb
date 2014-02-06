@@ -1,6 +1,6 @@
 class Admin::IssuesController < AdminController
 
-  before_action :set_issue, only: [:show, :edit, :update, :destroy]
+  before_action :set_issue, except: [:index, :new, :create]
 
   def index
     @issues = Issue.order("published_at DESC")
@@ -31,6 +31,22 @@ class Admin::IssuesController < AdminController
     end
   end
 
+  def import_from_delicious
+    posts = DELICIOUS.posts_all(tag: "!fiw-#{@issue.number}")
+    posts.each do |post|
+      link = Link.find_or_initialize_by(delicious_id: post.uid)
+      if link.new_record?
+        link.issue       = @issue
+        link.name        = post.title
+        link.url         = post.url.to_s
+        link.description = post.notes
+        link.tag_list    = post.tags.delete_if { |t| t == "!fiw-#{@issue.number}" }.join(", ")
+        link.save
+      end
+    end
+    redirect_to edit_admin_issue_path(@issue), notice: "Delicious links successfully imported."
+  end
+
   def destroy
     @issue.destroy
     redirect_to admin_issues_path, notice: "Issue was successfully destroyed."
@@ -38,7 +54,7 @@ class Admin::IssuesController < AdminController
 
   private
     def set_issue
-      @issue = Issue.find(params[:id])
+      @issue = Issue.find(params[:id] || params[:issue_id])
     end
 
     def issue_params

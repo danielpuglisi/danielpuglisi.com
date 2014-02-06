@@ -28,6 +28,7 @@ gem 'ranked-model'
 gem 'ransack'
 gem 'mailchimp-api'
 gem 'rails_12factor'
+gem 'www-delicious'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'

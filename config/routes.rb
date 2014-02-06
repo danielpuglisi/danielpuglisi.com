@@ -13,7 +13,9 @@ DanielpuglisiCom::Application.routes.draw do
     resources :posts, path: "articles", except: [:show]
     resources :links, except: [:show]
     post "/links/sort", to: "links#sort"
-    resources :issues, except: [:show]
+    resources :issues, except: [:show] do
+      get "/import_delicious", to: "issues#import_from_delicious"
+    end
   end
 
   # Work

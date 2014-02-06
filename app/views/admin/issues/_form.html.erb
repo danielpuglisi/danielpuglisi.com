@@ -21,6 +21,8 @@
 
   <div class="one-whole sub-header">
     <%= link_to_add_fields "Add link", f, :links %>
+    |
+    <%= link_to "Import from Delicious", admin_issue_import_delicious_path(@issue) %>
   </div>
   <ul id="sortable" class="links-list" data-update-url="<%= admin_links_sort_path %>">
     <%= f.fields_for :links do |builder| %>
