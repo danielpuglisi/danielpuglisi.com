@@ -1,7 +1,8 @@
 <li class="field link" data-item-id="<%= f.object.id %>">
   <div class="one-whole sub-header">
     Link
-    <%= link_to "remove", '#', class: "remove_fields right" %>
+    <%= link_to fa_icon("eye"), '#', class: "preview_field" %>
+    <%= link_to fa_icon("trash-o"), '#', class: "remove_field right" %>
   </div>
   <div class="meta">
     <div class="input one-third">
@@ -26,7 +27,7 @@
     </div>
     <div class="clear"></div>
   </div>
-  <%= f.input :description, label: false, placeholder: "Description...", input_html: {class: "form-post-content one-whole"} %>
+  <%= f.input :description, label: false, placeholder: "Description...", input_html: {class: "form-link-content one-whole"} %>
   <%= f.hidden_field :_destroy, class: "destroy-link" %>
   <div class="clear"></div>
 </li>

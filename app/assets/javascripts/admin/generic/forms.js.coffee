@@ -10,11 +10,18 @@ $ ->
     $("textarea").autogrow()
     event.preventDefault()
 
-  $('form').on 'click', '.remove_fields', (event) ->
+  $('form').on 'click', '.remove_field', (event) ->
+    if confirm "Really wanna delete this link?"
+      field = $(@).closest('.field')
+      field.slideUp ->
+        field.find('.input').remove() # otherwise chrome throws an exception if name or url are empty
+        field.find('.destroy-link').val('1')
+    event.preventDefault()
+
+  $('form').on 'click', '.preview_field', (event) ->
     field = $(@).closest('.field')
-    field.find('.input').remove() # otherwise chrome throws an exception if name or url are empty
-    field.find('.destroy-link').val('1')
-    field.hide()
+    url = field.find('.input .url').val()
+    window.open(url ,'_blank')
     event.preventDefault()
 
   # Sortable
