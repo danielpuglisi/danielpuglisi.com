@@ -15,6 +15,7 @@ DanielpuglisiCom::Application.routes.draw do
     post "/links/sort", to: "links#sort"
     resources :issues, except: [:show] do
       get "/import_delicious", to: "issues#import_from_delicious"
+      get "/markup", to: "issues#show_markup"
     end
   end
 

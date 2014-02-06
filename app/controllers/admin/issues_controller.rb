@@ -47,6 +47,10 @@ class Admin::IssuesController < AdminController
     redirect_to edit_admin_issue_path(@issue), notice: "Delicious links successfully imported."
   end
 
+  def show_markup
+    render layout: false
+  end
+
   def destroy
     @issue.destroy
     redirect_to admin_issues_path, notice: "Issue was successfully destroyed."

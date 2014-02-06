@@ -6,6 +6,7 @@
     <% else %>
       <%= link_to fa_icon("eye", text: "Live Version"), issue_path(@issue.number, bacon: "strips"), target: "_blank", class: "right" %>
     <% end %>
+    <%= link_to fa_icon("code", text: "Markup"), admin_issue_markup_path(@issue), target: "_blank", class: "mrl right" %>
   </h1>
 </div>
 
