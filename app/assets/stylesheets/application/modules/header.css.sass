@@ -53,24 +53,25 @@
       color: $black1 + #111
 
 .signup-bar
-  font-size: em(13px)
-  // color: #fff
-  color: $black1
-  // background: $orange
+  font-size: em(10px)
+  color: #fff
+  background: $black1
+  border-bottom: 1px solid $black1 - #111
   +text-shadow(none)
   #mc_embed_signup
     // margin-right: 20px
     input, div
       display: inline-block
-      color: $black1
+      color: #fff
   .left, .right
     padding: 5px 0
   input[type=email]
     padding: 0.333rem
     width: 200px
     font-size: 12px
+    color: $black1 !important
     border: none
-    border: 1px solid $gray1 - #111
+    border: 1px solid $black1 - #111
   .button
     font-size: 12px
     border: none
@@ -81,7 +82,6 @@
       display: inline-block
   .wrapper
     padding: 1.5rem 0
-    border-bottom: 1px solid $gray1 - #111
   i
     color: $red1
     font-size: 16px
