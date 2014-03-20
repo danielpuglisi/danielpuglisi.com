@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
   def home
-    @title = "Entrepreneur. Designer. Developer."
   end
 
   def work
