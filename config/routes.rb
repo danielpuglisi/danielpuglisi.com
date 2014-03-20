@@ -1,9 +1,6 @@
 DanielpuglisiCom::Application.routes.draw do
 
-  scope "(:locale)", locale: /de|en/ do
-    # Home
-    root :to => "pages#home"
-  end
+  root to: "pages#home"
 
   devise_for :users
 
@@ -29,6 +26,7 @@ DanielpuglisiCom::Application.routes.draw do
   # Posts
   get "/blog", to: redirect("/articles")
   get "/articles", to: "posts#index"
+  get "/articles(/page/:page)", to: "posts#index"
   get "/articles(/:year(/:month(/:day)))/:id", to: "posts#show", as: :post,
     year:   /(19|20)\d{2}/,
     month:  /[01]?\d/,

@@ -1,6 +1,10 @@
 body
   background: white
 
+.main
+  padding: 80px 0
+  width: 500px
+
 .box
   padding: 5rem 0
 
@@ -23,6 +27,7 @@ body
 .full-width-box
   .wrapper
     padding: 5rem 0
+    width: 100%
   .border-top
     border-top: 1px solid $gray1 - #111
 
@@ -38,6 +43,7 @@ body
 
 .issues-navigation
   line-height: 2rem
+  margin-bottom: 2rem
 
 .full-width-image
   font-family: "proxima-nova", sans-serif
@@ -57,23 +63,23 @@ body
 
 // Home specific
 
-.full-width-home
-  // background: url("http://farm8.staticflickr.com/7267/8157218730_643b240f68_h.jpg") center center no-repeat
-  background: url(image_path("home.jpg")) no-repeat
-  margin-top: -120px
-  height: 600px
-  background-position: center center
-  background-size: cover
-  .slogan
-    padding: 160px 0 0 0
+// .full-width-home
+//   // background: url("http://farm8.staticflickr.com/7267/8157218730_643b240f68_h.jpg") center center no-repeat
+//   background: url(image_path("home.jpg")) no-repeat
+//   margin-top: -120px
+//   height: 600px
+//   background-position: center center
+//   background-size: cover
+//   .slogan
+//     padding: 160px 0 0 0
     // .hire-me
     //   font-size: 16px
     //   a
     //     color: white
     //     border-bottom: 2px dashed #fff
     //     &:hover
-    //       color: $red1
-    //       border-bottom: 2px dashed $red1
+    //       color: $red
+    //       border-bottom: 2px dashed $red
 
 .full-width-work
   padding: 120px 0
@@ -88,17 +94,16 @@ body
     font-weight: 900
 
 .pagination
-  border-top: 1px solid $gray1 - #111
   font-size: 12px
   padding: 3rem 0
   text-align: center
   span a, .gap, .current
-    padding: 4px 12px
+    padding: 0 14px
+    display: inline-block
+    margin-bottom: 5px
   .current, a:hover
-    background: $red1
+    background: $red
     color: #fff
-    +text-shadow($black1 0 1px 1px)
-    +border-radius(3px)
 
 .fields
   line-height: 2rem

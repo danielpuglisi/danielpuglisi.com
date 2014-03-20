@@ -20,8 +20,8 @@
     color: #fff
     margin: 80px 0
     padding: 40px 0
-    background: $red1
-    border: 5px solid $red1 - #111
+    background: $red
+    border: 5px solid $red - #111
     +text-shadow(none)
     form
       input
@@ -31,39 +31,39 @@
       input[type=email]
         width: 280px
         margin-right: 20px
-        border: 1px solid $red1 - #111
+        border: 1px solid $red - #111
       input[type=submit]
         width: auto
-        border: 1px solid $red1 - #111
-        background: $red1 + #666
+        border: 1px solid $red - #111
+        background: $red + #666
         &:hover
-          background: $red1 + #777
+          background: $red + #777
           cursor: pointer
 
-.entry.issue-link
-  .wrapper
-    padding: 0
-    .inner
-      width: 100%
-      padding: 20px
-      +box-sizing(border-box)
+.post.issue-link
+  +box-sizing(border-box)
+  padding: 0
+  width: 100%
+  padding: 20px 0
   p
     line-height: 20px
     &:first-letter
       margin: 0
+  & + .post
+    padding-top: 0
 
 .issue-link-tags
   margin-left: 5px
   font-size: 12px
   a
-    color: $black1
+    color: $black
     &:hover
       text-decoration: underline
 
 .issue-link-url
   font-size: 13px
   a
-    color: $black1 + #444
+    color: $black + #444
     &:hover
       text-decoration: underline
 

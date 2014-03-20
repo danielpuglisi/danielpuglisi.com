@@ -1,16 +1,13 @@
 <div class="full-width-box sub-navigation issues-navigation">
-  <div class="wrapper border-top">
-    <div class="inner center">
-      <div class="links-search left">
-        <%= form_tag links_path, method: :get do %>
-          <%= text_field_tag :q, nil, placeholder: "Enter a search keyword", value: params[:q] %>
-          <%= submit_tag "Search Links" %>
-        <% end %>
-      </div>
-      <div class="right">
-        <%= link_to "Browse through older issues", issues_path %>
-      </div>
-      <div class="clear"></div>
+  <div class="center cf">
+    <div class="links-search left">
+      <%= form_tag links_path, method: :get do %>
+        <%= text_field_tag :q, nil, placeholder: "Enter a search keyword", value: params[:q] %>
+        <%= submit_tag "Search Links" %>
+      <% end %>
+    </div>
+    <div class="right">
+      <%= link_to "Browse through older issues", issues_path %>
     </div>
   </div>
 </div>

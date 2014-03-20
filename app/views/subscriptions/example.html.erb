@@ -1,22 +1,10 @@
-<div class="full-width-box">
-  <div class="wrapper border-top">
-    <div class="inner center">
-      <%= link_to "Subscribe to Friday is Webday", new_subscription_path %> to receive an issue on every friday directly into your inbox.<br /><br /> You also get access to all the previous issues and the entire Friday is Webday link collection.
+<article class="post">
+  <header>
+    <h2>Friday is Webday Issue #<%= @issue.number %></h2>
+    <div class="meta">
+      <%= @issue.published_at.strftime("%B %d, %Y") %>
     </div>
-  </div>
-</div>
-<article class="entry post">
-  <div class="wrapper">
-    <div class="inner">
-      <header>
-        <h2>Friday is Webday Issue #<%= @issue.number %></h2>
-        <div class="meta">
-          <%= @issue.published_at.strftime("%B %d, %Y") %>
-        </div>
-      </header>
-      <%= markdown(liquidize(@issue.body)) %>
-      <%# <%= render "disqus" %1> %>
-    </div>
-  </div>
+  </header>
+  <%= markdown(liquidize(@issue.body)) %>
   <%= render "posts/footer" %>
 </article>

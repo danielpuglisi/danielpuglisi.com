@@ -1,22 +1,17 @@
 <%= render "shared/issues_navigation" %>
 
 <% @issues_months.each do |month, issues| %>
-  <div class="entry entry-archive-month">
-    <div class="wrapper">
-      <div class="inner">
-        <header>
-        <h2><%= month.strftime("%B, %Y") %></h2>
-        </header>
-        <% issues.each do |issue| %>
-          <%= link_to issue_path(issue.number), class: "entry-archive" do %>
-            <div class="entry-title">Friday is Webday Issue #<%= issue.number %></div>
-            <div class="meta">
-              <%= issue.published_at.strftime("%B %d, %Y") %>
-            </div>
-          <% end %>
-        <% end %>
-        <div class="clear"></div>
-      </div>
-    </div>
+  <div class="post post-archive-month cf">
+    <header>
+      <h2><%= month.strftime("%B, %Y") %></h2>
+    </header>
+    <% issues.each do |issue| %>
+      <%= link_to issue_path(issue.number), class: "post-archive" do %>
+        <div class="post-title">Friday is Webday Issue #<%= issue.number %></div>
+        <div class="meta">
+          <%= issue.published_at.strftime("%B %d, %Y") %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 <% end %>

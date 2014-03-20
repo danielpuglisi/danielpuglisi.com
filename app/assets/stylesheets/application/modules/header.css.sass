@@ -1,89 +1,69 @@
-.header
-  color: $black1 + #444
-  line-height: 120px
-  height: 120px
-  z-index: 9999
-  position: relative
-  +text-shadow(none)
-  .logo
-    margin: 41px 0 40px 0
-    line-height: 0
-    a
-      border-bottom: none
-      color: $black1
-      &:hover
-        // color: $black1 + #333
-        color: $red1
-    .red
-      color: $red1
-    img
-      height: 39px
-  .navigation
-    font-family: "proxima-nova",sans-serif
-    li
-      float: left
-    .first a
-      +border-left-radius(3px)
-    .last a
-      +border-right-radius(3px)
-      border-right: 0
-      margin-right: 10px
-    .red a
-      background: $red1
-      +border-radius(3px)
-      border-right: 0
-      color: #fff
-      padding: 13px 13px 12px 13px
-      font-weight: 900
-    a
-      font-size: 12px
-      border-bottom: none
-      background: #fff
-      +background(rgba(#fff, 0.9))
-      color: $black1 + #333
-      padding: 13px 22px 12px 22px
-      margin-top: -5px
-      text-transform: uppercase
-      font-weight: 600
-      border-right: 1px solid #eee
-  a
-    color: $black1 + #666
-    border-bottom: 1px dashed $black1 + #666
-    &:hover
-      color: $black1 + #111
+.header-wrapper
+  position: fixed
 
-.signup-bar
-  font-size: em(10px)
-  color: #fff
-  background: $black1
-  border-bottom: 1px solid $black1 - #111
+.header
   +text-shadow(none)
-  #mc_embed_signup
-    // margin-right: 20px
-    input, div
-      display: inline-block
-      color: #fff
+  color: $black
+  width: 300px
+  padding-top: 80px
+  .logo
+    width: 45px
+    margin-top: 8px
+    margin-right: 20px
+    a
+      border-bottom: none
+      color: $black
+      &:hover
+        // color: $black + #333
+        color: $red
+    .red
+      color: $red
+    img
+      height: 45px
+  .header-content
+    width: 220px
+    .slogan
+      margin-bottom: 2rem
+  .navigation
+    margin-bottom: 2rem
+    padding-bottom: 2rem
+    border-bottom: 1px solid $gray1 - #111
+    a
+      border-bottom: none
+      font-weight: 400
+  a
+    color: $red
+
+#mc_embed_signup
+  margin-top: 1rem
+  color: #fff
+  +text-shadow(none)
+  input, div
+    display: inline-block
+    color: #fff
+    outline: none
   .left, .right
     padding: 5px 0
   input[type=email]
     padding: 0.333rem
-    width: 200px
+    width: 170px
     font-size: 12px
-    color: $black1 !important
+    color: $black !important
     border: none
-    border: 1px solid $black1 - #111
+    border: 1px solid $gray1 - #111
   .button
+    +border-radius(none)
     font-size: 12px
-    border: none
-    background: none
-    padding: 0
+    border: 1px solid $red - #111
+    background: $red
+    padding: 0.333rem
     &:hover
       text-decoration: underline
       display: inline-block
   .wrapper
     padding: 1.5rem 0
   i
-    color: $red1
+    color: $red
     font-size: 16px
     line-height: 8px
     display: inline-block

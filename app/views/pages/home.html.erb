@@ -1,78 +1,35 @@
-<div class="full-width-image full-width-home">
-  <div class="wrapper">
-    <div class="inner">
-      <div class="slogan">
-        <p>
-          <%= t('home.introduction') %>
-        </p>
-        <div class="fields">
-          <p>
-            <%= t('home.fields_start') %>
-            <ul>
-              <li class="green"><%= t('home.field_1') %></li>
-              <li class="yellow"><%= t('home.field_2') %></li>
-              <li class="blue"><%= t('home.field_3') %></li>
-            </ul>
-          </p>
-        </div>
-        <div class="clear"></div>
-        <p><%= t('home.freelancer') %>, <%= mail_to "daniel@codegestalt.com", t('home.hireme') %></p>
-      </div>
-    </div>
-  </div>
-</div>
+<p>
+  To be a little more specific:
+</p>
 
-<div class="box">
-  <div class="wrapper">
-    <div class="inner">
-      <h1 class="center"><%= t('home.recent_work') %></h1>
+<p>
+  I'm a Ruby <strong>developer</strong>, wannabe <strong>designer</strong>,
+  <%= link_to raw("programming <strong>teacher</strong>"), "http://learntocode.ch" %>, amateur <strong>photographer</strong>
+  and pizza <strong>enthusiast</strong>.
+</p>
 
-      <ul class="works">
-        <li>
-          <%= image_tag "work/seiten.jpg" %>
-          <a href="http://github.com/danielpuglisi/seiten" class="caption">
-            <span class="title">seiten</span>
-            <span class="what">Gem</span>
-          </a>
-        </li>
-        <li>
-          <%= image_tag "work/piarothen.jpg" %>
-          <a href="http://www.piarothen.ch" class="caption">
-            <span class="title">Pia Rothen</span>
-            <span class="what">Website</span>
-          </a>
-        </li>
-        <li>
-          <%= image_tag "work/railsgirlsbasel.jpg" %>
-          <a href="http://railsgirls.com/basel" class="caption">
-            <span class="title center">Rails Girls Basel</span>
-            <span class="what center">Organizer, Photography</span>
-          </a>
-        </li>
-        <div class="clear"></div>
-      </ul>
+<p>
+  I cofounded <%= link_to "Codegestalt", "http://codegestalt.com" %> with <%= link_to "Rodrigo", "http://rodrigohaenggi.com" %>.<br />
+  Together we're trying to make the world a better and more simple place. Check out some of our <%= link_to "work", "/work" %>.
+</p>
 
-      <div class="center">
-        <%= link_to raw("#{t('home.more_work')} &rarr;"), work_path %>
-      </div>
+<p>
+  If you're interested in hiring us, <%= mail_to "daniel@codegestalt.com", "feel free to drop us a line" %>.
+</p>
 
-    </div>
-  </div>
-</div>
-
-<div class="box gray box-bottom">
-  <div class="wrapper">
-    <div class="inner">
-      <h1 class="center"><%= t('home.customers') %></h1>
-      <ul class="customers">
-        <li><%= image_tag("customers/bsc.png") %></li>
-        <li><%= image_tag("customers/kms-schweiz.png") %></li>
-        <li><%= image_tag("customers/pia-rothen.png") %></li>
-        <li><%= image_tag("customers/ska.png") %></li>
-        <li><%= image_tag("customers/programmzeitung.png") %></li>
-        <li><%= image_tag("customers/restaurant-froburg.png") %></li>
-      </ul>
-      <div class="clear"></div>
-    </div>
-  </div>
-</div>
+<%# <div class="box gray box-bottom"> %>
+<%#   <div class="wrapper"> %>
+<%#     <div class="inner"> %>
+<%#       <h1 class="center"><%= t('home.customers') %1></h1> %>
+<%#       <ul class="customers"> %>
+<%#         <li><%= image_tag("customers/bsc.png") %1></li> %>
+<%#         <li><%= image_tag("customers/kms-schweiz.png") %1></li> %>
+<%#         <li><%= image_tag("customers/pia-rothen.png") %1></li> %>
+<%#         <li><%= image_tag("customers/ska.png") %1></li> %>
+<%#         <li><%= image_tag("customers/programmzeitung.png") %1></li> %>
+<%#         <li><%= image_tag("customers/restaurant-froburg.png") %1></li> %>
+<%#       </ul> %>
+<%#       <div class="clear"></div> %>
+<%#     </div> %>
+<%#   </div> %>
+<%# </div> %>

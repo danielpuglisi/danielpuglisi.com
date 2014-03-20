@@ -1,22 +1,19 @@
-.entry
-  .wrapper
-    padding: 70px 0 90px 0
-    border-top: 1px solid $gray1 - #111
-    .inner
-      width: 740px
-      margin: 0 auto
+.post
+  & + .post
+    padding-top: 160px
+
   header
     margin-bottom: 2.5rem
     .meta
       margin-top: 0.5rem
-      font-size: 1rem
-      color: $black1 + #555
+      font-size: 0.75rem
+      color: $black + #555
       a
-        color: $black1 + #888
+        color: $black + #888
   h3
     margin-top: 1.5rem
   .post-content
-    font-family: "Georgia", serif
+    // font-family: "Georgia", serif
   ul, ol, blockquote, iframe, .gist
     margin: 3rem 0
   blockquote, ul, ol
@@ -25,7 +22,7 @@
     font-size: 1rem
     line-height: 2rem
     border-left: 3px solid $gray1 - #111
-    color: $black1 + #555
+    color: $black + #555
     font-style: italic
   ul
     list-style: disc
@@ -50,8 +47,8 @@
     margin: 3rem 0
   img
     max-width: 100%
-    border: 1px solid $black1 + #999
-    +box-shadow($black1 + #999 0 1px 2px)
+    border: 1px solid $black + #999
+    +box-shadow($black + #999 0 1px 2px)
   .source, .image-description
     display: block
     text-align: left
@@ -59,11 +56,11 @@
     margin-top: 5px
     font-size: em(12px)
     a
-      color: $black1 + #888
+      color: $black + #888
       &:hover
-        border-bottom: $black1 + #999 dashed 1px
+        border-bottom: $black + #999 dashed 1px
   .image-description
-    color: $black1 + #555
+    color: $black + #555
 
   // Quora
   [data-width="575"]
@@ -76,8 +73,8 @@
     display: block
     margin: 3rem auto
   .youtube, .vimeo, .flickr-slideshow
-    width: 740px
-    height: 405px
+    width: 500px
+    height: 274px
     margin: 3rem auto
 
   // Custom helpers for articles
@@ -92,11 +89,11 @@
     font-weight: 200
     margin: 3rem 0
 
-  .entry-footer
+  .post-footer
     text-align: center
     font-size: 13px
     font-style: italic
-    color: $black1 + #444
+    color: $black + #444
     // #disqus_thread
     //   margin-top: 30px
     .social-media-links
@@ -119,15 +116,16 @@
     .promote
       margin-top: 1.5rem
 
-.entry-archive-month, .entry-tags
-  .wrapper
-    .inner
-      width: 100%
-      +box-sizing(border-box)
+.post-archive-month, .post-tags
+  +box-sizing(border-box)
+  width: 100%
+  margin-bottom: 2rem
+  & + .post
+    padding-top: 0
 
-.entry-archive
-  width: 130px
-  height: 130px
+.post-archive
+  width: 100px
+  height: 100px
   padding: 1.5rem
   background: #ddd
   float: left
@@ -136,13 +134,13 @@
   margin-right: 1rem
   margin-bottom: 1rem
   overflow: hidden
-  color: $black1
+  color: $black
   &:hover
-    background: $red1
+    background: $red
     +text-shadow(none)
     color: #fff
     .meta
-      background: $red1
+      background: $red
       color: #fff
   .meta
     z-index: 99999
@@ -154,13 +152,13 @@
     left: 0
     margin-top: 1rem
     font-size: 12px
-    color: $black1 + #444
+    color: $black + #444
     a
-      color: $black1 + #444
+      color: $black + #444
 
 @media (max-width: 1070px)
 
-  .entry
+  .post
     padding: 0
     .wrapper
       .inner
@@ -177,7 +175,7 @@
 
 @media (max-width: 720px)
 
-  .entry
+  .post
     padding: 0
     .wrapper
       .inner

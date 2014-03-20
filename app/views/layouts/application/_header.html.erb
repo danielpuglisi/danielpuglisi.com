@@ -1,44 +1,37 @@
-<section class="signup-bar" id="signup-bar">
-  <div class="wrapper">
-    <div class="inner">
-      <div class="left">
-        <%= fa_icon "star" %> Get free access to the <%= link_to "Friday Is Webday Link Collection", links_path %> and receive weekly updates.
-      </div>
-      <div class="right">
-
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
-          <%= form_tag subscription_path do %>
-            <%= email_field_tag :email, nil, placeholder: "Enter your email" %>
-            <%= submit_tag "Subscribe Now", class: "button" %>
-          <% end %>
-        </div>
-        <!--End mc_embed_signup-->
-
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-</section>
-
-<section class="header">
-  <div class="wrapper">
-    <div class="inner">
+<section class="header-wrapper">
+  <section class="header">
+    <div class="cf">
       <div class="logo left">
         <%= link_to root_path, class: "domain" do %>
           <%= image_tag "danielpuglisi.png" %>
         <% end %>
       </div>
+      <div class="header-content right">
+        <div class="slogan">
+          Nice to meet you. I'm Daniel, passionate learner and maker.
+        </div>
 
-      <div class="navigation right">
-        <ul>
-          <li class="first"><%= link_to "Work", work_path %></li>
-          <li><%= link_to "Articles", articles_path %></li>
-          <li class="last"><%= link_to "Links", links_path %></li>
-          <li class="red"><%= mail_to "daniel@codegestalt.com", fa_icon("envelope") %></li>
-        </ul>
+        <div class="navigation">
+          <ul>
+            <li><%= link_to "Articles", articles_path %> / <%= link_to "Archive", archive_path %></li>
+            <li><%= link_to "Work", work_path %></li>
+            <li><%= link_to "Links", links_path %></li>
+            <li><%= mail_to "daniel@codegestalt.com", "Contact me" %></li>
+          </ul>
+        </div>
+
+        Get free access to the <%= link_to "Friday Is Webday Link Collection", links_path %> and receive weekly updates.
+
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <%= form_tag subscription_path do %>
+            <%= email_field_tag :email, nil, placeholder: "Enter your email", class: "left" %>
+            <%= submit_tag "Go!", class: "button right" %>
+          <% end %>
+        </div>
+        <!--End mc_embed_signup-->
       </div>
-      <div class="clear"></div>
     </div>
-  </div>
+
+  </section>
 </section>

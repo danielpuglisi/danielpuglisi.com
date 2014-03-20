@@ -16,13 +16,17 @@
 <body>
   <%= render "layouts/application/fb_like_button" %>
   <section class="full-width">
-    <%= render "layouts/application/header" %>
+    <div class="wrapper">
+      <div class="inner">
+        <%= render "layouts/application/header" %>
 
-    <div class="main">
-      <%= yield %>
+        <div class="main right">
+          <%= yield %>
+          <%# <%= render "layouts/application/footer" %1> %>
+        </div>
+      </div>
     </div>
 
-    <%= render "layouts/application/footer" %>
   </section>
 </body>
 </html>

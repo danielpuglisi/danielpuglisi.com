@@ -1,33 +1,31 @@
 <div class="full-width-box subscription">
-  <div class="wrapper border-top">
 
-    <header>
-      <h1 class="center">
-        Get Free Access to the<br /> Friday Is Webday Link Collection
-      </h1>
-    </header>
+  <header>
+    <h1>
+      Get Free Access to the<br /> Friday Is Webday Link Collection
+    </h1>
+  </header>
 
-    <h2 class="subtitle center">Put your email in the box below and I’ll send you the following:</h2>
+  <h2 class="subtitle">Put your email in the box<br /> below and I’ll send you the following:</h2>
 
-    <div class="column">
-      <ul>
-        <li><b>Each friday the newest Friday is Webday issue directly into your inbox</b> - The newsletter is full of articles, libraries, tools, inspirations, people to follow and other web related stuff.</li>
-        <li><b>All previous issues</b> - There are currently <%= Issue.published.count %> issues and I will create many more. Want an example? Check out <%= link_to "issue #3", example_issue_path %>.</li>
-        <%# <li><b>My entire link collection</b> - which includes all the links of Friday is Webday and other topics which are not covered in the newsletter. E.g. Ruby, Rails, Marketing, Books and much more.</li> %>
-      </ul>
-      <div class="box center">
-        <h3><b>Get Free Access to the Link Collection Now!</b></h3>
-        <%= form_tag subscription_path do %>
-          <%= email_field_tag :email, nil, placeholder: "Enter your email" %>
-          <%= submit_tag "Subscribe" %>
-        <% end %>
-      </div>
-      <p>
-        No spam. No games.<br />
-        Just timely, insanely useful links to help you build stuff for the web.
-      </p>
-
+  <div class="column">
+    <ul>
+      <li><b>Each friday the newest Friday is Webday issue directly into your inbox</b> - The newsletter is full of articles, libraries, tools, inspirations, people to follow and other web related stuff.</li>
+      <li><b>All previous issues</b> - There are currently <%= Issue.published.count %> issues and I will create many more. Want an example? Check out <%= link_to "issue #3", example_issue_path %>.</li>
+      <%# <li><b>My entire link collection</b> - which includes all the links of Friday is Webday and other topics which are not covered in the newsletter. E.g. Ruby, Rails, Marketing, Books and much more.</li> %>
+    </ul>
+    <div class="box center">
+      <h3><b>Get Free Access to the Link Collection Now!</b></h3>
+      <%= form_tag subscription_path do %>
+        <%= email_field_tag :email, nil, placeholder: "Enter your email" %>
+        <%= submit_tag "Subscribe" %>
+      <% end %>
     </div>
+    <p>
+      No spam. No games.<br />
+      Just timely, insanely useful links to help you build stuff for the web.
+    </p>
 
   </div>
+
 </div>
