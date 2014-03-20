@@ -1,12 +1,12 @@
 <section class="header-wrapper">
   <section class="header">
     <div class="cf">
-      <div class="logo left">
+      <div class="header-logo">
         <%= link_to root_path, class: "domain" do %>
           <%= image_tag "danielpuglisi.png" %>
         <% end %>
       </div>
-      <div class="header-content right">
+      <div class="header-content">
         <div class="slogan">
           Nice to meet you. I'm Daniel, passionate learner and maker.
         </div>
@@ -20,16 +20,18 @@
           </ul>
         </div>
 
-        Get free access to the <%= link_to "Friday Is Webday Link Collection", links_path %> and receive weekly updates.
+        <div class="mc-signup">
+          Get free access to the <%= link_to "Friday Is Webday Link Collection", links_path %> and receive weekly updates.
 
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
-          <%= form_tag subscription_path do %>
-            <%= email_field_tag :email, nil, placeholder: "Enter your email", class: "left" %>
-            <%= submit_tag "Go!", class: "button right" %>
-          <% end %>
+          <!-- Begin MailChimp Signup Form -->
+          <div id="mc_embed_signup">
+            <%= form_tag subscription_path do %>
+              <%= email_field_tag :email, nil, placeholder: "Enter your email", class: "left" %>
+              <%= submit_tag "Go!", class: "button right" %>
+            <% end %>
+          </div>
+          <!--End mc_embed_signup-->
         </div>
-        <!--End mc_embed_signup-->
       </div>
     </div>
 

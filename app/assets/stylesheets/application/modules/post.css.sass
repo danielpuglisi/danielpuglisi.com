@@ -136,12 +136,13 @@
   overflow: hidden
   color: $black
   &:hover
-    background: $red
     +text-shadow(none)
+    background: $red
+    text-decoration: none
     color: #fff
     .meta
       background: $red
-      color: #fff
+      color: $red + #888
   .meta
     z-index: 99999
     position: absolute
@@ -160,25 +161,23 @@
 
   .post
     padding: 0
-    .wrapper
-      .inner
-        padding-top: 2rem
-        width: auto
-        img
-          width: 100%
-      .spotify
-        width: 420px
-        height: 500px
-      .youtube, .vimeo, .flickr-slideshow
-        width: 100%
-        height: 340px
+    & + .post
+      padding-top: 80px
+    img
+      width: 100%
+    .spotify
+      width: 420px
+      height: 500px
+    .youtube, .vimeo, .flickr-slideshow
+      width: 100%
+      height: 340px
 
 @media (max-width: 720px)
 
   .post
     padding: 0
-    .wrapper
-      .inner
-      .spotify
-        width: 260px
-        height: 340px
+    & + .post
+      padding-top: 80px
+    .spotify
+      width: 260px
+      height: 340px

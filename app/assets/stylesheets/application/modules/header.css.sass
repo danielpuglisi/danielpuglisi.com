@@ -6,33 +6,40 @@
   color: $black
   width: 300px
   padding-top: 80px
-  .logo
-    width: 45px
-    margin-top: 8px
-    margin-right: 20px
-    a
-      border-bottom: none
-      color: $black
-      &:hover
-        // color: $black + #333
-        color: $red
-    .red
-      color: $red
-    img
-      height: 45px
-  .header-content
-    width: 220px
-    .slogan
-      margin-bottom: 2rem
-  .navigation
-    margin-bottom: 2rem
-    padding-bottom: 2rem
-    border-bottom: 1px solid $gray1 - #111
-    a
-      border-bottom: none
-      font-weight: 400
   a
     color: $red
+
+.header-logo
+  width: 45px
+  margin-top: 8px
+  margin-right: 20px
+  float: left
+  a
+    border-bottom: none
+    color: $black
+    &:hover
+      // color: $black + #333
+      color: $red
+  .red
+    color: $red
+  img
+    height: 45px
+
+.header-content
+  width: 220px
+  float: right
+  .slogan
+    margin-bottom: 2rem
+
+.navigation
+  margin-bottom: 2rem
+  a
+    border-bottom: none
+    font-weight: 400
+
+.mc-signup
+  padding-top: 2rem
+  border-top: 1px solid $gray1 - #111
 
 #mc_embed_signup
   margin-top: 1rem
@@ -69,8 +76,45 @@
     display: inline-block
 
 @media (max-width: 1070px)
-  .signup-bar
-    .left
-      padding: 0 0 5px 0
-    .left, .right
-      float: none
+
+  .header-wrapper
+    position: relative
+
+  .header
+    width: 20%
+    float: left
+    padding-top: 20px
+
+  .header-logo
+    float: none
+    margin: 0
+    width: 100%
+  .header-content
+    width: 100%
+    float: none
+  #mc_embed_signup
+    input[type=email]
+      width: 70%
+
+@media (max-width: 720px)
+
+  .header-wrapper
+    position: relative
+  .header
+    width: 100%
+    float: none
+    padding-top: 20px
+    text-align: center
+  .header-logo
+    float: none
+    margin: 0
+    width: 100%
+  .header-content
+    width: 100%
+    float: none
+  .navigation
+    li
+      display: inline-block
+      margin: 0 10px
+  .mc-signup
+    display: none
