@@ -11,7 +11,7 @@ class SubscriptionsController < ApplicationController
     if session[:subscription]
       case session[:subscription][:status]
       when "subscribed"
-        redirect_to links_path
+        redirect_to issues_path
       when "pending"
         redirect_to confirm_subscription_path
       when "unsubscribed"
@@ -29,7 +29,7 @@ class SubscriptionsController < ApplicationController
 
       case session[:subscription][:status]
       when "subscribed"
-        redirect_to links_path
+        redirect_to issues_path
       when "unsubscribed"
         redirect_to new_subscription_path
       end
@@ -62,7 +62,7 @@ class SubscriptionsController < ApplicationController
         @mc.lists.subscribe ENV["MAILCHIMP_LIST_ID"], "email" => email
         redirect_to confirm_subscription_path
       rescue Mailchimp::ListAlreadySubscribedError
-        redirect_to links_path, notice: "You're already subscribed..."
+        redirect_to issues_path, notice: "You're already subscribed..."
       end
     end
 end
