@@ -34,6 +34,7 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (3.2.6)
       activerecord (>= 3, < 5)
+    addressable (2.3.6)
     arel (4.0.2)
     bcrypt (3.1.7)
     builder (3.1.4)
@@ -119,6 +120,9 @@ GEM
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
     rack (1.5.2)
+    rack-canonical-host (0.1.0)
+      addressable
+      rack (~> 1.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.4)
@@ -212,6 +216,7 @@ DEPENDENCIES
   mailchimp-api
   pg
   pygments.rb
+  rack-canonical-host
   rails (= 4.0.4)
   rails_12factor
   ranked-model

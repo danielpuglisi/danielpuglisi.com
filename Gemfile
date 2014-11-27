@@ -29,6 +29,7 @@ gem 'ransack'
 gem 'mailchimp-api'
 gem 'rails_12factor'
 gem 'www-delicious'
+gem 'rack-canonical-host'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
