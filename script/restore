@@ -75,8 +75,10 @@ when 'Y', 'y', 'yes'
     puts ""
 
     # restore database
-    url = `heroku pgbackups:url -a #{HEROKU_PRODUCTION}`
-    system("heroku pgbackups:restore DATABASE '#{url}' -a #{HEROKU_STAGING} --confirm #{HEROKU_STAGING}")
+    Bundler.with_clean_env do
+      url = `heroku pgbackups:url -a #{HEROKU_PRODUCTION}`
+      system("heroku pgbackups:restore DATABASE '#{url}' -a #{HEROKU_STAGING} --confirm #{HEROKU_STAGING}")
+    end
 
   when 'l', 'local'
     #
@@ -96,9 +98,11 @@ when 'Y', 'y', 'yes'
     puts "Adding production data to the database..."
 
     puts "Downloading latest Backup from production..."
-    url = `heroku pgbackups:url --app #{HEROKU_PRODUCTION}`
-    data = Curl.get(url)
-    File.open("tmp/production.dump", 'w') << data.body_str
+    Bundler.with_clean_env do
+      url = `heroku pgbackups:url --app #{HEROKU_PRODUCTION}`
+      data = Curl.get(url)
+      File.open("tmp/production.dump", 'w') << data.body_str
+    end
 
     #
     # Restoring database
