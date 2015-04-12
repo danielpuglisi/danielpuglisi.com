@@ -4,7 +4,7 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module DanielpuglisiCom
   class Application < Rails::Application
@@ -19,10 +19,8 @@ module DanielpuglisiCom
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
-    config.i18n.available_locales = [:en, :de]
 
-    # Precompiling
-    config.assets.initialize_on_precompile = false
-    config.assets.precompile << ["admin.css", "admin.js", "login.css"]
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end

@@ -6,4 +6,4 @@ heroku_env = File.join(Rails.root, 'env.rb')
 load(heroku_env) if File.exists?(heroku_env)
 
 # Initialize the rails application.
-DanielpuglisiCom::Application.initialize!
+Rails.application.initialize!

@@ -1,75 +1,23 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
 en:
-  home:
-    introduction: "Hey, my name is Daniel"
-    fields_start: "I'm a"
-    field_1: "Designer"
-    field_2: "Developer"
-    field_3: "Photographer"
-    # freelancer: "I'm currently available as a freelancer"
-    freelancer: "I solve problems"
-    hireme: "hire me now"
-
-    recent_work: "Recent work"
-    more_work: "Check out more"
-    customers: "Customers"
-
-
-    # who_title: "Who?"
-    # who_body: "
-    #   <p>
-    #     I'm a swiss web developer with a weakness for
-    #     design and typography. In 2011 I cofounded
-    #     <a href='http://codegestalt.com'>Codegestalt</a>
-    #     with two geeks I've met over Twitter. Since then
-    #     we realized several projects together.
-    #   </p>
-    #   <p>
-    #     My free time is sacrificed to improve my
-    #     <a href='http://flickr.com/photos/danielpuglisi'>photography skills</a>
-    #     and to extend my film and book horizon.
-    #     You can find some recommendations
-    #     <a href='/recommendations'>here</a>.
-    #   </p>
-    #   <p>
-    #     I do and like a lot of other stuff,
-    #     but I'm afraid those things are only
-    #     half as interesting as the things you just read.
-    #     But if you would like to hear more of it anyway,
-    #     read on or <a href='mailto:daniel@codegestalt.com'>contact me</a>.
-    #   </p>
-    #   "
-
-    # what_title: "What?"
-    # what_body: "
-    #   <p>
-    #     I've been designing and building web sites for over six years now & counting.
-    #     When the sun is up I'm working for clients and when the sun is down I'm working
-    #     on Codegestalt and personal projects like
-    #     <a href='http://kreatify.com'>Kreatify</a> &
-    #     <a href='http://bridgetalks.ch'>Bridge</a>.
-    #   </p>
-    #   <p>
-    #     If you're interested in what I've done so far, switch over
-    #     to the <a href='/work'>work</a> page. Also I feel the urge to
-    #     open up myself from time to time, which outputs
-    #     in a more or less useful blog post which you'll find in the <a href='/articles'>articles</a> section.
-    #   <p>
-    #   "
-
-    # why_title: "Why?"
-    # why_body: "
-    #   <p>
-    #     Since learning new stuff is essential in life and makes a lot of fun, I'm constantly pushing myself to new heights.
-    #     I love to experiment with new things and always try to redefine myself. Sometimes with a combination of old and new things.
-    #   </p>
-    #   <p>
-    #     Knowing certain things doesn't just come to you, you have to earn it yourself with constant effort and by always taking the next step.
-    #     I love that feeling when that *click* happens and suddenly everything turns from blur to high definition.
-    #   </p>
-    #   <p>
-    #     I can't get enough of building and creating stuff.
-    #     So if you like what I do and need someone to help you,
-    #     don't be shy and <a href='mailto:daniel@codegestalt.com'>contact me</a>.
-    #     I would love to help you.
-    #   </p>
-    #   "
+  hello: "Hello world"
