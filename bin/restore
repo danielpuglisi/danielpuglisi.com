@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+require 'pathname'
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path('../../',  __FILE__)
+
+Dir.chdir APP_ROOT do
+  # Import shit from production
+
+  HEROKU_PRODUCTION = "puglisi-master"
+  DEV_DATABASE = "puglisi_development"
+  DB_USERNAME = ENV['USER']
+  DB_HOST = "localhost"
+
+  puts "== Capturing Heroku Backup =="
+  system "curl -o tmp/production.dump `heroku pg:backups public-url -q --app #{HEROKU_PRODUCTION}`"
+
+  puts "\n== Preparing database =="
+  system "bin/rake db:drop"
+  system "bin/rake db:create"
+  system "pg_restore --verbose --clean --no-acl --no-owner -h #{DB_HOST} -U #{DB_USERNAME} -d #{DEV_DATABASE} tmp/production.dump"
+
+  puts "\n== Restarting application server =="
+  system "touch tmp/restart.txt"
+end
