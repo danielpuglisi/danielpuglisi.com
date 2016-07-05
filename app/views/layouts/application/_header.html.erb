@@ -13,7 +13,7 @@
 
         <div class="navigation">
           <ul>
-            <li><%= link_to "Articles", articles_path %> / <%= link_to "Archive", archive_path %></li>
+            <li><%= link_to "Thoughts", "http://shimatta.me/daniel", target: '_blank' %> / <%= link_to "Archive", archive_path %></li>
             <li><%= link_to "Work", work_path %></li>
             <li><%= mail_to "daniel@codegestalt.com", "Contact me" %></li>
           </ul>
@@ -22,9 +22,9 @@
           <p>Current projects:</p>
 
           <ul>
+            <li><%= link_to "Shimatta", 'https://shimatta.me/', target: '_blank' %></li>
             <li><%= link_to "Desk Hunt", 'http://deskhunt.com', target: '_blank' %></li>
             <li><%= link_to "Remember Posters", 'http://rememberposters.com', target: '_blank' %></li>
-            <li><%= link_to "makers chat", 'https://makerschat.com/', target: '_blank' %></li>
           </ul>
         </div>
 
